@@ -1,0 +1,16 @@
+# 图像数据不入库（约 14 GB）
+data/Table_*/
+experiment/data/
+experiment/data_corrected/
+
+# LaTeX 中间文件
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.blg
+manuscript/*.synctex.gz
+
+__pycache__/
+*.pyc
+.DS_Store
+._*
