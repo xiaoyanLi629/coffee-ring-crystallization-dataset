@@ -10,7 +10,7 @@
 
 `experiment/` 是论文里的分析代码与结果。statistical_analysis.py、computer_vision_analysis.py、machine_learning_analysis.py 和 comprehensive_analysis.py 生成统计、特征、聚类与回归基准的 csv 和 png；image_correction.py 与 run_correction.py 做图像校正，输入是 experiment/data/（在原始图之外多了每个元素的 *_processed.jpeg），输出到 experiment/data_corrected/；recipies/ 是各元素浓度表与配方原始 xlsx。三个 README_*.md 说明分析框架、数据集分析和图像校正方法。
 
-`manuscript/` 是论文 LaTeX 源文件（manuscript.tex、references.bib、PRIMEarxiv.sty）和已编译的 manuscript.pdf。需要注意的是，同目录下的 manuscriptV2_JChen.tex 并不属于这个 625 样本数据集，而是陈姣萍那套 225 样本、九种温湿度条件的 Scientific Data 稿件，它对应的项目是 `/root/autodl-fs/CoffeeRing_Multimodal_Dataset`；搬迁时那个目录正被另一个任务打包，所以暂时放在这里，之后可以移过去。
+`manuscript/` 是论文 LaTeX 源文件（manuscript.tex、references.bib、PRIMEarxiv.sty）和已编译的 manuscript.pdf。陈姣萍那套 225 样本、九种温湿度条件的稿件 manuscriptV2_JChen.tex 原先也混在这里，它不属于本数据集，已归位到 `/root/autodl-fs/CoffeeRing_Multimodal_Dataset/manuscript/`。
 
 ## 状态
 
