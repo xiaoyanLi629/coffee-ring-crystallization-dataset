@@ -16,3 +16,4 @@ __pycache__/
 ._*
 pilot/*.npz
 pilot/features.csv
+analysis/out_*/features_with_semnorm.csv

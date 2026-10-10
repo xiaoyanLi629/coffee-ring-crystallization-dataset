@@ -1,0 +1,490 @@
+{
+ "C1_colour": {
+  "C": {
+   "chroma_mean": [
+    1.0,
+    0.24400000274181366,
+    0.3050000071525574
+   ],
+   "chroma_low_intensity": [
+    1.0,
+    0.157,
+    0.208
+   ],
+   "chroma_high_intensity": [
+    1.0,
+    0.142,
+    0.174
+   ]
+  },
+  "Ca": {
+   "chroma_mean": [
+    0.9950000047683716,
+    0.7179999947547913,
+    0.4740000069141388
+   ],
+   "chroma_low_intensity": [
+    0.993,
+    0.604,
+    0.315
+   ],
+   "chroma_high_intensity": [
+    0.995,
+    0.727,
+    0.458
+   ]
+  },
+  "Cl": {
+   "chroma_mean": [
+    0.9760000109672546,
+    0.37299999594688416,
+    0.9549999833106995
+   ],
+   "chroma_low_intensity": [
+    0.972,
+    0.347,
+    0.948
+   ],
+   "chroma_high_intensity": [
+    0.986,
+    0.172,
+    0.98
+   ]
+  },
+  "Mg": {
+   "chroma_mean": [
+    0.9919999837875366,
+    0.20900000631809235,
+    0.2329999953508377
+   ],
+   "chroma_low_intensity": [
+    0.99,
+    0.163,
+    0.182
+   ],
+   "chroma_high_intensity": [
+    0.991,
+    0.151,
+    0.166
+   ]
+  },
+  "Na": {
+   "chroma_mean": [
+    0.9599999785423279,
+    0.9980000257492065,
+    0.5370000004768372
+   ],
+   "chroma_low_intensity": [
+    0.947,
+    0.996,
+    0.401
+   ],
+   "chroma_high_intensity": [
+    0.974,
+    0.999,
+    0.671
+   ]
+  },
+  "O": {
+   "chroma_mean": [
+    0.4050000011920929,
+    0.9850000143051147,
+    0.953000009059906
+   ],
+   "chroma_low_intensity": [
+    0.264,
+    0.977,
+    0.936
+   ],
+   "chroma_high_intensity": [
+    0.566,
+    0.994,
+    0.974
+   ]
+  },
+  "S": {
+   "chroma_mean": [
+    0.4399999976158142,
+    0.9980000257492065,
+    0.45100000500679016
+   ],
+   "chroma_low_intensity": [
+    0.323,
+    0.998,
+    0.335
+   ],
+   "chroma_high_intensity": [
+    0.424,
+    0.998,
+    0.425
+   ]
+  }
+ },
+ "C2_comb": {
+  "C": {
+   "frac_maps_with_clear_comb": 0.981,
+   "period_median_IQR": [
+    3.5,
+    3.5,
+    3.5
+   ],
+   "spearman_levels_vs_own_salt": -0.004,
+   "spearman_levels_vs_mean_intensity": -0.092
+  },
+  "Ca": {
+   "frac_maps_with_clear_comb": 0.966,
+   "period_median_IQR": [
+    3.5,
+    3.42,
+    3.5
+   ],
+   "spearman_levels_vs_own_salt": -0.045,
+   "spearman_levels_vs_mean_intensity": -0.06
+  },
+  "Cl": {
+   "frac_maps_with_clear_comb": 0.823,
+   "period_median_IQR": [
+    2.3,
+    2.3,
+    2.37
+   ],
+   "spearman_levels_vs_own_salt": -0.023,
+   "spearman_levels_vs_mean_intensity": 0.434
+  },
+  "Mg": {
+   "frac_maps_with_clear_comb": 0.949,
+   "period_median_IQR": [
+    3.5,
+    3.5,
+    3.5
+   ],
+   "spearman_levels_vs_own_salt": 0.051,
+   "spearman_levels_vs_mean_intensity": -0.185
+  },
+  "Na": {
+   "frac_maps_with_clear_comb": 0.454,
+   "period_median_IQR": [
+    12.25,
+    2.49,
+    14.7
+   ],
+   "spearman_levels_vs_own_salt": -0.306,
+   "spearman_levels_vs_mean_intensity": -0.598
+  },
+  "O": {
+   "frac_maps_with_clear_comb": 0.915,
+   "period_median_IQR": [
+    2.33,
+    2.3,
+    2.36
+   ],
+   "spearman_levels_vs_own_salt": 0.014,
+   "spearman_levels_vs_mean_intensity": 0.233
+  },
+  "S": {
+   "frac_maps_with_clear_comb": 0.356,
+   "period_median_IQR": [
+    2.53,
+    2.41,
+    3.5
+   ],
+   "spearman_levels_vs_own_salt": -0.124,
+   "spearman_levels_vs_mean_intensity": 0.1
+  }
+ },
+ "C3_stretch": {
+  "C": {
+   "max_median": 222.0,
+   "frac_maps_max>=250": 0.061,
+   "p999_cv": 0.143,
+   "mean_cv": 0.252,
+   "rho_p999_own": -0.01,
+   "rho_mean_own": 0.327
+  },
+  "Ca": {
+   "max_median": 248.0,
+   "frac_maps_max>=250": 0.445,
+   "p999_cv": 0.07,
+   "mean_cv": 0.225,
+   "rho_p999_own": 0.468,
+   "rho_mean_own": -0.009
+  },
+  "Cl": {
+   "max_median": 255.0,
+   "frac_maps_max>=250": 0.793,
+   "p999_cv": 0.142,
+   "mean_cv": 0.315,
+   "rho_p999_own": 0.269,
+   "rho_mean_own": 0.132
+  },
+  "Mg": {
+   "max_median": 230.0,
+   "frac_maps_max>=250": 0.074,
+   "p999_cv": 0.145,
+   "mean_cv": 0.355,
+   "rho_p999_own": 0.113,
+   "rho_mean_own": 0.154
+  },
+  "Na": {
+   "max_median": 255.0,
+   "frac_maps_max>=250": 0.998,
+   "p999_cv": 0.056,
+   "mean_cv": 0.307,
+   "rho_p999_own": 0.191,
+   "rho_mean_own": 0.343
+  },
+  "O": {
+   "max_median": 255.0,
+   "frac_maps_max>=250": 0.864,
+   "p999_cv": 0.043,
+   "mean_cv": 0.254,
+   "rho_p999_own": 0.3,
+   "rho_mean_own": 0.359
+  },
+  "S": {
+   "max_median": 250.0,
+   "frac_maps_max>=250": 0.514,
+   "p999_cv": 0.07,
+   "mean_cv": 0.279,
+   "rho_p999_own": 0.286,
+   "rho_mean_own": 0.421
+  }
+ },
+ "C4_background": {
+  "C": {
+   "detectable_frac(d>1)": 0.013,
+   "d_median": 0.56,
+   "background_by_session": {
+    "2021-08-14": 0.0307,
+    "2021-08-15": 0.0309,
+    "2021-08-16": 0.029,
+    "2021-08-17": 0.0313,
+    "2021-08-19": 0.0244,
+    "2021-08-20": 0.0276,
+    "2021-08-21": 0.0383,
+    "2021-08-22": 0.0385,
+    "2021-08-23": 0.0386,
+    "2021-08-24": 0.0364,
+    "2021-08-27": 0.0385,
+    "2021-08-28": 0.0372
+   },
+   "background_CV_across_sessions": 0.15
+  },
+  "Ca": {
+   "detectable_frac(d>1)": 0.228,
+   "d_median": 0.76,
+   "background_by_session": {
+    "2021-08-14": 0.0295,
+    "2021-08-15": 0.0265,
+    "2021-08-16": 0.0261,
+    "2021-08-17": 0.0247,
+    "2021-08-19": 0.0235,
+    "2021-08-20": 0.0296,
+    "2021-08-21": 0.0353,
+    "2021-08-22": 0.0353,
+    "2021-08-23": 0.0358,
+    "2021-08-24": 0.0344,
+    "2021-08-27": 0.0357,
+    "2021-08-28": 0.0292
+   },
+   "background_CV_across_sessions": 0.153
+  },
+  "Cl": {
+   "detectable_frac(d>1)": 0.921,
+   "d_median": 2.1,
+   "background_by_session": {
+    "2021-08-14": 0.0239,
+    "2021-08-15": 0.0255,
+    "2021-08-16": 0.0229,
+    "2021-08-17": 0.0279,
+    "2021-08-19": 0.0187,
+    "2021-08-20": 0.0214,
+    "2021-08-21": 0.0247,
+    "2021-08-22": 0.0252,
+    "2021-08-23": 0.0266,
+    "2021-08-24": 0.0245,
+    "2021-08-27": 0.0272,
+    "2021-08-28": 0.0261
+   },
+   "background_CV_across_sessions": 0.105
+  },
+  "Mg": {
+   "detectable_frac(d>1)": 0.051,
+   "d_median": 0.24,
+   "background_by_session": {
+    "2021-08-14": 0.1139,
+    "2021-08-15": 0.1151,
+    "2021-08-16": 0.1098,
+    "2021-08-17": 0.1019,
+    "2021-08-19": 0.0546,
+    "2021-08-20": 0.0396,
+    "2021-08-21": 0.1019,
+    "2021-08-22": 0.1518,
+    "2021-08-23": 0.1604,
+    "2021-08-24": 0.1478,
+    "2021-08-27": 0.1257,
+    "2021-08-28": 0.1017
+   },
+   "background_CV_across_sessions": 0.326
+  },
+  "Na": {
+   "detectable_frac(d>1)": 0.172,
+   "d_median": 0.56,
+   "background_by_session": {
+    "2021-08-14": 0.0484,
+    "2021-08-15": 0.0504,
+    "2021-08-16": 0.0461,
+    "2021-08-17": 0.0522,
+    "2021-08-19": 0.043,
+    "2021-08-20": 0.0446,
+    "2021-08-21": 0.0479,
+    "2021-08-22": 0.0565,
+    "2021-08-23": 0.0644,
+    "2021-08-24": 0.0541,
+    "2021-08-27": 0.0648,
+    "2021-08-28": 0.0526
+   },
+   "background_CV_across_sessions": 0.135
+  },
+  "O": {
+   "detectable_frac(d>1)": 0.974,
+   "d_median": 1.98,
+   "background_by_session": {
+    "2021-08-14": 0.0479,
+    "2021-08-15": 0.0453,
+    "2021-08-16": 0.048,
+    "2021-08-17": 0.0434,
+    "2021-08-19": 0.0399,
+    "2021-08-20": 0.0398,
+    "2021-08-21": 0.0572,
+    "2021-08-22": 0.0603,
+    "2021-08-23": 0.0516,
+    "2021-08-24": 0.0535,
+    "2021-08-27": 0.0555,
+    "2021-08-28": 0.0557
+   },
+   "background_CV_across_sessions": 0.137
+  },
+  "S": {
+   "detectable_frac(d>1)": 0.555,
+   "d_median": 1.08,
+   "background_by_session": {
+    "2021-08-14": 0.0294,
+    "2021-08-15": 0.0289,
+    "2021-08-16": 0.0278,
+    "2021-08-17": 0.0262,
+    "2021-08-19": 0.0246,
+    "2021-08-20": 0.033,
+    "2021-08-21": 0.0392,
+    "2021-08-22": 0.0395,
+    "2021-08-23": 0.0394,
+    "2021-08-24": 0.0392,
+    "2021-08-27": 0.0329,
+    "2021-08-28": 0.0322
+   },
+   "background_CV_across_sessions": 0.168
+  }
+ },
+ "C5_table5_exports": {
+  "1010x751": {
+   "n": 1,
+   "sessions": {
+    "2021-08-20": 1
+   },
+   "reg_scale_median": 1.006,
+   "eds_mask_frac_median": 0.477,
+   "drop_d_frac_median": 0.675,
+   "C_out_median": 0.0247,
+   "Ca_out_median": 0.0334,
+   "Cl_out_median": 0.0184,
+   "Mg_out_median": 0.0484,
+   "Na_out_median": 0.0446,
+   "O_out_median": 0.0486,
+   "S_out_median": 0.0376,
+   "C_contrast_median": 0.0183,
+   "Ca_contrast_median": 0.0233,
+   "Cl_contrast_median": 0.0182,
+   "Mg_contrast_median": 0.0034,
+   "Na_contrast_median": 0.0251,
+   "O_contrast_median": 0.0832,
+   "S_contrast_median": 0.0337
+  },
+  "1010x757": {
+   "n": 53,
+   "sessions": {
+    "2021-08-19": 31,
+    "2021-08-20": 22
+   },
+   "reg_scale_median": 1.008,
+   "eds_mask_frac_median": 0.49,
+   "drop_d_frac_median": 0.684,
+   "C_out_median": 0.0264,
+   "Ca_out_median": 0.0284,
+   "Cl_out_median": 0.0201,
+   "Mg_out_median": 0.0422,
+   "Na_out_median": 0.0433,
+   "O_out_median": 0.0385,
+   "S_out_median": 0.0278,
+   "C_contrast_median": 0.0153,
+   "Ca_contrast_median": 0.0207,
+   "Cl_contrast_median": 0.0274,
+   "Mg_contrast_median": 0.0015,
+   "Na_contrast_median": 0.0268,
+   "O_contrast_median": 0.0648,
+   "S_contrast_median": 0.0232
+  },
+  "1048x786": {
+   "n": 70,
+   "sessions": {
+    "2021-08-21": 70
+   },
+   "reg_scale_median": 1.01,
+   "eds_mask_frac_median": 0.481,
+   "drop_d_frac_median": 0.677,
+   "C_out_median": 0.0383,
+   "Ca_out_median": 0.0353,
+   "Cl_out_median": 0.0247,
+   "Mg_out_median": 0.1019,
+   "Na_out_median": 0.0479,
+   "O_out_median": 0.0572,
+   "S_out_median": 0.0392,
+   "C_contrast_median": 0.0231,
+   "Ca_contrast_median": 0.0351,
+   "Cl_contrast_median": 0.04,
+   "Mg_contrast_median": 0.0148,
+   "Na_contrast_median": 0.0332,
+   "O_contrast_median": 0.1086,
+   "S_contrast_median": 0.0439
+  },
+  "909x682": {
+   "n": 1,
+   "sessions": {
+    "2021-08-19": 1
+   },
+   "reg_scale_median": 1.006,
+   "eds_mask_frac_median": 0.481,
+   "drop_d_frac_median": 0.678,
+   "C_out_median": 0.0229,
+   "Ca_out_median": 0.0194,
+   "Cl_out_median": 0.0189,
+   "Mg_out_median": 0.0621,
+   "Na_out_median": 0.0351,
+   "O_out_median": 0.0474,
+   "S_out_median": 0.0287,
+   "C_contrast_median": 0.0193,
+   "Ca_contrast_median": 0.0321,
+   "Cl_contrast_median": 0.036,
+   "Mg_contrast_median": 0.0019,
+   "Na_contrast_median": 0.0077,
+   "O_contrast_median": 0.0907,
+   "S_contrast_median": 0.0174
+  }
+ },
+ "C5_reg_scale_by_export": {
+  "1010x751": 1.006,
+  "1010x757": 1.006,
+  "1010x758": 1.013,
+  "1048x786": 1.01,
+  "909x682": 1.006
+ }
+}

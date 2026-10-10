@@ -1,0 +1,81 @@
+droplet_id,flag,note
+T1_S3_R5,eds_set_duplicated,all 7 EDS maps byte-identical between these two droplets; true maps of one droplet missing
+T1_S4_R1,eds_set_duplicated,all 7 EDS maps byte-identical between these two droplets; true maps of one droplet missing
+T2_S16_R2,eds_element_duplicated,C.jpeg identical to Ca.jpeg
+T5_S22_R2,eds_element_duplicated,Mg.jpeg identical to O.jpeg
+T4_S20_R3,sem_duplicated,sem.jpg and sem.txt byte-identical between replicates 3 and 4
+T4_S20_R4,sem_duplicated,sem.jpg and sem.txt byte-identical between replicates 3 and 4
+T2_S18_R2,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T2_S18_R3,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T2_S18_R4,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T2_S18_R5,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T2_S19_R5,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T2_S22_R5,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T2_S23_R1,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T3_S1_R1,semtxt_wrong_in_released_copy,data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here
+T1_S22_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T2_S15_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T2_S25_R1,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T2_S9_R2,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T3_S10_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T3_S13_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T3_S18_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S11_R3,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S12_R3,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S18_R1,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S3_R4,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S4_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S7_R2,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S8_R2,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T4_S8_R5,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T5_S19_R2,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T5_S20_R4,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T5_S5_R3,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T5_S7_R4,eds_mixed_sizes,EDS maps of this droplet differ in pixel size
+T1_S13_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S13_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S13_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S13_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S13_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S14_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S14_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S14_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S14_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S14_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S17_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S17_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S17_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S17_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S17_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S18_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S18_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S18_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S18_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S18_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S19_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S19_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S19_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S19_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S19_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S20_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S20_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S20_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S20_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S23_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S23_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S23_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S23_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S23_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S24_R1,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S24_R2,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S24_R3,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S24_R4,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T1_S24_R5,optical_low_resolution,optical image 1280x1024 instead of 2592x1944
+T5_S8_R4,sem_10kV,SEM at 10 kV instead of 15 kV
+T5_S8_R5,sem_10kV,SEM at 10 kV instead of 15 kV
+T1_S1_R1,pilot_mask_suspect,pilot EDS droplet mask covers <5% of the field
+T1_S1_R4,pilot_mask_suspect,pilot EDS droplet mask covers <5% of the field
+T1_S1_R5,pilot_mask_suspect,pilot EDS droplet mask covers <5% of the field
+T1_S8_R1,pilot_mask_suspect,pilot EDS droplet mask covers <5% of the field
+T2_S1_R2,pilot_mask_suspect,pilot EDS droplet mask covers <5% of the field
+T4_S10_R5,pilot_mask_suspect,pilot EDS droplet mask covers <5% of the field

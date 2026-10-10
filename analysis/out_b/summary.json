@@ -1,0 +1,587 @@
+{
+ "n": 621,
+ "variance_decomposition_family_median": {
+  "EDS background (outside droplet)": {
+   "R2_chem": 0.245,
+   "R2_session": 0.189,
+   "unique_chem": 0.115,
+   "unique_session": 0.069,
+   "shared": 0.13
+  },
+  "EDS in-droplet chemistry": {
+   "R2_chem": 0.573,
+   "R2_session": 0.231,
+   "unique_chem": 0.279,
+   "unique_session": 0.07,
+   "shared": 0.176
+  },
+  "EDS relative (rim ratio, d)": {
+   "R2_chem": 0.245,
+   "R2_session": 0.155,
+   "unique_chem": 0.163,
+   "unique_session": 0.041,
+   "shared": 0.093
+  },
+  "Geometry": {
+   "R2_chem": 0.418,
+   "R2_session": 0.296,
+   "unique_chem": 0.136,
+   "unique_session": 0.026,
+   "shared": 0.27
+  },
+  "Optical global": {
+   "R2_chem": 0.533,
+   "R2_session": 0.49,
+   "unique_chem": 0.122,
+   "unique_session": 0.077,
+   "shared": 0.412
+  },
+  "SEM in-droplet, substrate-normalised": {
+   "R2_chem": 0.361,
+   "R2_session": 0.414,
+   "unique_chem": 0.115,
+   "unique_session": 0.138,
+   "shared": 0.274
+  },
+  "SEM style (raw, whole image)": {
+   "R2_chem": 0.599,
+   "R2_session": 0.714,
+   "unique_chem": 0.022,
+   "unique_session": 0.062,
+   "shared": 0.585
+  }
+ },
+ "NaHCO3_effect_per_log_unit_[beta,se]": {
+  "C_contrast": {
+   "no_session": [
+    0.288,
+    0.054
+   ],
+   "session_FE": [
+    -0.068,
+    0.152
+   ]
+  },
+  "Ca_contrast": {
+   "no_session": [
+    0.096,
+    0.054
+   ],
+   "session_FE": [
+    -0.336,
+    0.169
+   ]
+  },
+  "Cl_contrast": {
+   "no_session": [
+    -0.177,
+    0.053
+   ],
+   "session_FE": [
+    -0.682,
+    0.166
+   ]
+  },
+  "Mg_contrast": {
+   "no_session": [
+    -0.17,
+    0.037
+   ],
+   "session_FE": [
+    -0.192,
+    0.114
+   ]
+  },
+  "Na_contrast": {
+   "no_session": [
+    0.531,
+    0.044
+   ],
+   "session_FE": [
+    -0.09,
+    0.133
+   ]
+  },
+  "O_contrast": {
+   "no_session": [
+    0.206,
+    0.039
+   ],
+   "session_FE": [
+    -0.125,
+    0.115
+   ]
+  },
+  "S_contrast": {
+   "no_session": [
+    0.001,
+    0.038
+   ],
+   "session_FE": [
+    -0.266,
+    0.118
+   ]
+  },
+  "C_total": {
+   "no_session": [
+    0.642,
+    0.049
+   ],
+   "session_FE": [
+    0.304,
+    0.15
+   ]
+  },
+  "Ca_total": {
+   "no_session": [
+    0.599,
+    0.043
+   ],
+   "session_FE": [
+    -0.054,
+    0.126
+   ]
+  },
+  "Cl_total": {
+   "no_session": [
+    0.231,
+    0.046
+   ],
+   "session_FE": [
+    -0.556,
+    0.139
+   ]
+  },
+  "Mg_total": {
+   "no_session": [
+    0.022,
+    0.037
+   ],
+   "session_FE": [
+    -0.08,
+    0.117
+   ]
+  },
+  "Na_total": {
+   "no_session": [
+    0.913,
+    0.035
+   ],
+   "session_FE": [
+    0.12,
+    0.104
+   ]
+  },
+  "O_total": {
+   "no_session": [
+    0.67,
+    0.037
+   ],
+   "session_FE": [
+    0.205,
+    0.109
+   ]
+  },
+  "S_total": {
+   "no_session": [
+    0.401,
+    0.029
+   ],
+   "session_FE": [
+    -0.103,
+    0.086
+   ]
+  },
+  "semn_in_p5": {
+   "no_session": [
+    0.679,
+    0.047
+   ],
+   "session_FE": [
+    0.321,
+    0.125
+   ]
+  },
+  "semn_in_p25": {
+   "no_session": [
+    0.163,
+    0.049
+   ],
+   "session_FE": [
+    0.612,
+    0.152
+   ]
+  },
+  "semn_in_p50": {
+   "no_session": [
+    -0.212,
+    0.05
+   ],
+   "session_FE": [
+    0.715,
+    0.151
+   ]
+  },
+  "semn_in_p75": {
+   "no_session": [
+    -0.535,
+    0.05
+   ],
+   "session_FE": [
+    0.588,
+    0.139
+   ]
+  },
+  "semn_in_p95": {
+   "no_session": [
+    -0.879,
+    0.044
+   ],
+   "session_FE": [
+    0.056,
+    0.121
+   ]
+  },
+  "semn_in_hf": {
+   "no_session": [
+    -0.985,
+    0.04
+   ],
+   "session_FE": [
+    -0.205,
+    0.085
+   ]
+  },
+  "semn_in_bright_frac": {
+   "no_session": [
+    -0.841,
+    0.046
+   ],
+   "session_FE": [
+    -0.025,
+    0.132
+   ]
+  },
+  "semn_in_dark_frac": {
+   "no_session": [
+    0.231,
+    0.054
+   ],
+   "session_FE": [
+    -0.914,
+    0.157
+   ]
+  },
+  "semn_rim_minus_centre": {
+   "no_session": [
+    0.367,
+    0.054
+   ],
+   "session_FE": [
+    -0.232,
+    0.143
+   ]
+  },
+  "C_out": {
+   "no_session": [
+    0.23,
+    0.056
+   ],
+   "session_FE": [
+    -0.162,
+    0.163
+   ]
+  },
+  "Ca_out": {
+   "no_session": [
+    0.426,
+    0.052
+   ],
+   "session_FE": [
+    -0.108,
+    0.138
+   ]
+  },
+  "Cl_out": {
+   "no_session": [
+    0.048,
+    0.052
+   ],
+   "session_FE": [
+    -0.406,
+    0.161
+   ]
+  },
+  "Mg_out": {
+   "no_session": [
+    -0.182,
+    0.057
+   ],
+   "session_FE": [
+    -0.837,
+    0.15
+   ]
+  },
+  "Na_out": {
+   "no_session": [
+    0.095,
+    0.054
+   ],
+   "session_FE": [
+    -0.281,
+    0.149
+   ]
+  },
+  "O_out": {
+   "no_session": [
+    0.295,
+    0.054
+   ],
+   "session_FE": [
+    0.01,
+    0.147
+   ]
+  },
+  "S_out": {
+   "no_session": [
+    0.423,
+    0.053
+   ],
+   "session_FE": [
+    -0.105,
+    0.143
+   ]
+  },
+  "C_outsd": {
+   "no_session": [
+    0.028,
+    0.057
+   ],
+   "session_FE": [
+    -0.145,
+    0.189
+   ]
+  },
+  "Ca_outsd": {
+   "no_session": [
+    0.228,
+    0.052
+   ],
+   "session_FE": [
+    0.063,
+    0.17
+   ]
+  },
+  "Cl_outsd": {
+   "no_session": [
+    -0.133,
+    0.054
+   ],
+   "session_FE": [
+    -0.401,
+    0.176
+   ]
+  },
+  "Mg_outsd": {
+   "no_session": [
+    -0.331,
+    0.056
+   ],
+   "session_FE": [
+    -0.926,
+    0.169
+   ]
+  },
+  "Na_outsd": {
+   "no_session": [
+    -0.131,
+    0.054
+   ],
+   "session_FE": [
+    -0.373,
+    0.168
+   ]
+  },
+  "O_outsd": {
+   "no_session": [
+    0.069,
+    0.054
+   ],
+   "session_FE": [
+    0.175,
+    0.174
+   ]
+  },
+  "S_outsd": {
+   "no_session": [
+    0.223,
+    0.053
+   ],
+   "session_FE": [
+    0.036,
+    0.175
+   ]
+  },
+  "opt_mean": {
+   "no_session": [
+    0.706,
+    0.048
+   ],
+   "session_FE": [
+    0.237,
+    0.124
+   ]
+  },
+  "drop_d_frac": {
+   "no_session": [
+    0.643,
+    0.049
+   ],
+   "session_FE": [
+    0.551,
+    0.158
+   ]
+  }
+ },
+ "mixed_sessions": {
+  "2021-08-16 T1": 8,
+  "2021-08-16 T2": 55,
+  "2021-08-19 T2": 20,
+  "2021-08-19 T5": 32,
+  "2021-08-23 T3": 15,
+  "2021-08-23 T4": 58
+ },
+ "salt_R2_recipeCV_vs_LOSO": {
+  "SEM style (raw, whole image)": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.604,
+    "leave_one_session_out": 0.054
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": -0.041,
+    "leave_one_session_out": -0.062
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": 0.283,
+    "leave_one_session_out": -0.248
+   }
+  },
+  "SEM in-droplet, substrate-normalised": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.632,
+    "leave_one_session_out": 0.412
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": 0.22,
+    "leave_one_session_out": 0.1
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": 0.149,
+    "leave_one_session_out": 0.002
+   }
+  },
+  "EDS in-droplet chemistry": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.725,
+    "leave_one_session_out": 0.499
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": 0.64,
+    "leave_one_session_out": 0.642
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": 0.757,
+    "leave_one_session_out": 0.716
+   }
+  },
+  "EDS relative (rim ratio, d)": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.673,
+    "leave_one_session_out": 0.452
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": 0.621,
+    "leave_one_session_out": 0.578
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": 0.7,
+    "leave_one_session_out": 0.751
+   }
+  },
+  "EDS background (outside droplet)": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.608,
+    "leave_one_session_out": 0.333
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": 0.108,
+    "leave_one_session_out": 0.131
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": 0.314,
+    "leave_one_session_out": 0.143
+   }
+  },
+  "Optical global": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.303,
+    "leave_one_session_out": 0.169
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": -0.0,
+    "leave_one_session_out": -0.018
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": -0.068,
+    "leave_one_session_out": -0.183
+   }
+  },
+  "Geometry": {
+   "NaHCO3_mM": {
+    "recipe_5fold": 0.378,
+    "leave_one_session_out": 0.194
+   },
+   "CaCl2_mM": {
+    "recipe_5fold": 0.082,
+    "leave_one_session_out": 0.087
+   },
+   "MgSO4_mM": {
+    "recipe_5fold": -0.139,
+    "leave_one_session_out": -0.286
+   }
+  }
+ },
+ "table_from_features_balanced_acc": {
+  "SEM style (raw, whole image)": {
+   "balanced_acc": 0.778,
+   "perm_null_mean": 0.19,
+   "perm_null_max": 0.278
+  },
+  "SEM in-droplet, substrate-normalised": {
+   "balanced_acc": 0.668,
+   "perm_null_mean": 0.192,
+   "perm_null_max": 0.235
+  },
+  "EDS background (outside droplet)": {
+   "balanced_acc": 0.635,
+   "perm_null_mean": 0.188,
+   "perm_null_max": 0.259
+  },
+  "EDS in-droplet chemistry": {
+   "balanced_acc": 0.629,
+   "perm_null_mean": 0.19,
+   "perm_null_max": 0.235
+  },
+  "EDS relative (rim ratio, d)": {
+   "balanced_acc": 0.647,
+   "perm_null_mean": 0.171,
+   "perm_null_max": 0.23
+  },
+  "Optical global": {
+   "balanced_acc": 0.365,
+   "perm_null_mean": 0.191,
+   "perm_null_max": 0.266
+  }
+ },
+ "mode_from_SEM_norm_balacc": 0.971
+}
