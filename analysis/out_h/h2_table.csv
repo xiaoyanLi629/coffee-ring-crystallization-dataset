@@ -1,0 +1,64 @@
+input,element,protocol,R2,rho,n
+SEM (hand-crafted),C,P1 recipe CV,0.042,0.363,617
+SEM (hand-crafted),C,P2 leave-one-session-out,-0.121,0.235,617
+SEM (hand-crafted),Ca,P1 recipe CV,-0.051,0.246,617
+SEM (hand-crafted),Ca,P2 leave-one-session-out,-0.112,0.142,617
+SEM (hand-crafted),Cl,P1 recipe CV,0.047,0.318,617
+SEM (hand-crafted),Cl,P2 leave-one-session-out,-0.08,0.166,617
+SEM (hand-crafted),Mg,P1 recipe CV,0.087,0.204,617
+SEM (hand-crafted),Mg,P2 leave-one-session-out,0.027,0.11,617
+SEM (hand-crafted),Na,P1 recipe CV,0.448,0.71,617
+SEM (hand-crafted),Na,P2 leave-one-session-out,0.433,0.675,617
+SEM (hand-crafted),O,P1 recipe CV,0.22,0.428,617
+SEM (hand-crafted),O,P2 leave-one-session-out,0.19,0.377,617
+SEM (hand-crafted),S,P1 recipe CV,0.215,0.408,617
+SEM (hand-crafted),S,P2 leave-one-session-out,0.168,0.345,617
+SEM (ResNet18),C,P1 recipe CV,0.218,0.412,617
+SEM (ResNet18),C,P2 leave-one-session-out,-0.005,0.249,617
+SEM (ResNet18),Ca,P1 recipe CV,0.173,0.451,617
+SEM (ResNet18),Ca,P2 leave-one-session-out,-0.081,0.196,617
+SEM (ResNet18),Cl,P1 recipe CV,0.289,0.554,617
+SEM (ResNet18),Cl,P2 leave-one-session-out,0.065,0.363,617
+SEM (ResNet18),Mg,P1 recipe CV,0.276,0.573,617
+SEM (ResNet18),Mg,P2 leave-one-session-out,0.17,0.463,617
+SEM (ResNet18),Na,P1 recipe CV,0.704,0.831,617
+SEM (ResNet18),Na,P2 leave-one-session-out,0.458,0.688,617
+SEM (ResNet18),O,P1 recipe CV,0.477,0.68,617
+SEM (ResNet18),O,P2 leave-one-session-out,0.262,0.484,617
+SEM (ResNet18),S,P1 recipe CV,0.543,0.745,617
+SEM (ResNet18),S,P2 leave-one-session-out,0.429,0.646,617
+Concentrations (oracle),C,P1 recipe CV,0.119,0.368,617
+Concentrations (oracle),C,P2 leave-one-session-out,-0.155,0.113,617
+Concentrations (oracle),Ca,P1 recipe CV,0.136,0.315,617
+Concentrations (oracle),Ca,P2 leave-one-session-out,-0.015,0.134,617
+Concentrations (oracle),Cl,P1 recipe CV,0.282,0.552,617
+Concentrations (oracle),Cl,P2 leave-one-session-out,0.228,0.496,617
+Concentrations (oracle),Mg,P1 recipe CV,0.558,0.909,617
+Concentrations (oracle),Mg,P2 leave-one-session-out,0.558,0.908,617
+Concentrations (oracle),Na,P1 recipe CV,0.672,0.818,617
+Concentrations (oracle),Na,P2 leave-one-session-out,0.621,0.796,617
+Concentrations (oracle),O,P1 recipe CV,0.627,0.849,617
+Concentrations (oracle),O,P2 leave-one-session-out,0.615,0.833,617
+Concentrations (oracle),S,P1 recipe CV,0.674,0.867,617
+Concentrations (oracle),S,P2 leave-one-session-out,0.665,0.858,617
+Concentrations + session (oracle),C,P1 recipe CV,0.286,0.545,617
+Concentrations + session (oracle),Ca,P1 recipe CV,0.054,0.285,617
+Concentrations + session (oracle),Cl,P1 recipe CV,0.349,0.635,617
+Concentrations + session (oracle),Mg,P1 recipe CV,0.519,0.894,617
+Concentrations + session (oracle),Na,P1 recipe CV,0.769,0.883,617
+Concentrations + session (oracle),O,P1 recipe CV,0.629,0.854,617
+Concentrations + session (oracle),S,P1 recipe CV,0.646,0.855,617
+SEM (hand-crafted),C,within-recipe (P1 folds),0.133,0.356,617
+SEM (hand-crafted),Ca,within-recipe (P1 folds),0.043,0.231,617
+SEM (hand-crafted),Cl,within-recipe (P1 folds),0.087,0.281,617
+SEM (hand-crafted),Mg,within-recipe (P1 folds),-0.003,0.311,617
+SEM (hand-crafted),Na,within-recipe (P1 folds),-0.007,0.125,617
+SEM (hand-crafted),O,within-recipe (P1 folds),0.098,0.424,617
+SEM (hand-crafted),S,within-recipe (P1 folds),0.085,0.33,617
+SEM (ResNet18),C,within-recipe (P1 folds),0.021,0.189,617
+SEM (ResNet18),Ca,within-recipe (P1 folds),0.085,0.248,617
+SEM (ResNet18),Cl,within-recipe (P1 folds),0.137,0.333,617
+SEM (ResNet18),Mg,within-recipe (P1 folds),-0.002,0.109,617
+SEM (ResNet18),Na,within-recipe (P1 folds),0.018,0.203,617
+SEM (ResNet18),O,within-recipe (P1 folds),0.104,0.314,617
+SEM (ResNet18),S,within-recipe (P1 folds),0.073,0.241,617

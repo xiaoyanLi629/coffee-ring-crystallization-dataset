@@ -1,0 +1,1006 @@
+{
+ "n": 617,
+ "H1": {
+  "EDS (hand-crafted) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.756,
+   "rho": 0.912,
+   "R2_recipe": 0.864,
+   "n": 617
+  },
+  "EDS (hand-crafted) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.655,
+   "rho": 0.858,
+   "R2_recipe": 0.767,
+   "n": 617
+  },
+  "EDS (hand-crafted) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.423,
+   "rho": 0.704,
+   "R2_recipe": 0.53,
+   "n": 617
+  },
+  "EDS (hand-crafted) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": 0.373,
+   "rho": 0.624,
+   "R2_recipe": 0.484,
+   "n": 59
+  },
+  "EDS (hand-crafted) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": 0.194,
+   "rho": 0.617,
+   "R2_recipe": 0.246,
+   "n": 190
+  },
+  "EDS (hand-crafted) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.765,
+   "rho": 0.885,
+   "R2_recipe": 0.829,
+   "n": 617
+  },
+  "EDS (hand-crafted) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.696,
+   "rho": 0.849,
+   "R2_recipe": 0.774,
+   "n": 617
+  },
+  "EDS (hand-crafted) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.582,
+   "rho": 0.809,
+   "R2_recipe": 0.662,
+   "n": 617
+  },
+  "EDS (hand-crafted) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": 0.482,
+   "rho": 0.787,
+   "R2_recipe": 0.523,
+   "n": 307
+  },
+  "EDS (hand-crafted) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": 0.254,
+   "rho": 0.844,
+   "R2_recipe": 0.36,
+   "n": 310
+  },
+  "EDS (hand-crafted) | MgSO4_mM | P1 recipe CV": {
+   "R2": 0.771,
+   "rho": 0.888,
+   "R2_recipe": 0.843,
+   "n": 617
+  },
+  "EDS (hand-crafted) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": 0.713,
+   "rho": 0.852,
+   "R2_recipe": 0.793,
+   "n": 617
+  },
+  "EDS (hand-crafted) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.627,
+   "rho": 0.809,
+   "R2_recipe": 0.712,
+   "n": 617
+  },
+  "EDS (hand-crafted) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": 0.515,
+   "rho": 0.698,
+   "R2_recipe": 0.547,
+   "n": 307
+  },
+  "EDS (hand-crafted) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": 0.438,
+   "rho": 0.773,
+   "R2_recipe": 0.715,
+   "n": 310
+  },
+  "SEM (hand-crafted) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.529,
+   "rho": 0.801,
+   "R2_recipe": 0.651,
+   "n": 617
+  },
+  "SEM (hand-crafted) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.4,
+   "rho": 0.728,
+   "R2_recipe": 0.485,
+   "n": 617
+  },
+  "SEM (hand-crafted) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.264,
+   "rho": 0.578,
+   "R2_recipe": 0.386,
+   "n": 617
+  },
+  "SEM (hand-crafted) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": -1.053,
+   "rho": 0.692,
+   "R2_recipe": -1.023,
+   "n": 59
+  },
+  "SEM (hand-crafted) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": -5.69,
+   "rho": 0.246,
+   "R2_recipe": -4.461,
+   "n": 190
+  },
+  "SEM (hand-crafted) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.112,
+   "rho": 0.406,
+   "R2_recipe": 0.169,
+   "n": 617
+  },
+  "SEM (hand-crafted) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.044,
+   "rho": 0.298,
+   "R2_recipe": 0.102,
+   "n": 617
+  },
+  "SEM (hand-crafted) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.083,
+   "rho": 0.321,
+   "R2_recipe": 0.134,
+   "n": 617
+  },
+  "SEM (hand-crafted) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": -0.675,
+   "rho": -0.074,
+   "R2_recipe": -0.528,
+   "n": 307
+  },
+  "SEM (hand-crafted) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": -4.457,
+   "rho": 0.275,
+   "R2_recipe": -4.089,
+   "n": 310
+  },
+  "SEM (hand-crafted) | MgSO4_mM | P1 recipe CV": {
+   "R2": -0.023,
+   "rho": 0.129,
+   "R2_recipe": 0.054,
+   "n": 617
+  },
+  "SEM (hand-crafted) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": -0.241,
+   "rho": -0.064,
+   "R2_recipe": -0.154,
+   "n": 617
+  },
+  "SEM (hand-crafted) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": -0.145,
+   "rho": 0.0,
+   "R2_recipe": -0.081,
+   "n": 617
+  },
+  "SEM (hand-crafted) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": -1.198,
+   "rho": 0.012,
+   "R2_recipe": -1.104,
+   "n": 307
+  },
+  "SEM (hand-crafted) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": -3.68,
+   "rho": 0.333,
+   "R2_recipe": -2.329,
+   "n": 310
+  },
+  "SEM (ResNet18) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.821,
+   "rho": 0.902,
+   "R2_recipe": 0.87,
+   "n": 617
+  },
+  "SEM (ResNet18) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.495,
+   "rho": 0.742,
+   "R2_recipe": 0.559,
+   "n": 617
+  },
+  "SEM (ResNet18) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.085,
+   "rho": 0.524,
+   "R2_recipe": 0.147,
+   "n": 617
+  },
+  "SEM (ResNet18) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": -0.086,
+   "rho": 0.24,
+   "R2_recipe": -0.025,
+   "n": 59
+  },
+  "SEM (ResNet18) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": 0.177,
+   "rho": 0.625,
+   "R2_recipe": 0.196,
+   "n": 190
+  },
+  "SEM (ResNet18) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.592,
+   "rho": 0.775,
+   "R2_recipe": 0.675,
+   "n": 617
+  },
+  "SEM (ResNet18) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.523,
+   "rho": 0.725,
+   "R2_recipe": 0.612,
+   "n": 617
+  },
+  "SEM (ResNet18) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.429,
+   "rho": 0.661,
+   "R2_recipe": 0.516,
+   "n": 617
+  },
+  "SEM (ResNet18) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": -1.116,
+   "rho": 0.183,
+   "R2_recipe": -1.036,
+   "n": 307
+  },
+  "SEM (ResNet18) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": -0.447,
+   "rho": -0.039,
+   "R2_recipe": -0.371,
+   "n": 310
+  },
+  "SEM (ResNet18) | MgSO4_mM | P1 recipe CV": {
+   "R2": 0.338,
+   "rho": 0.57,
+   "R2_recipe": 0.436,
+   "n": 617
+  },
+  "SEM (ResNet18) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": 0.081,
+   "rho": 0.342,
+   "R2_recipe": 0.175,
+   "n": 617
+  },
+  "SEM (ResNet18) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.008,
+   "rho": 0.34,
+   "R2_recipe": 0.117,
+   "n": 617
+  },
+  "SEM (ResNet18) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": -0.998,
+   "rho": 0.18,
+   "R2_recipe": -0.884,
+   "n": 307
+  },
+  "SEM (ResNet18) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": -0.47,
+   "rho": -0.112,
+   "R2_recipe": -0.332,
+   "n": 310
+  },
+  "Optical (hand-crafted) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.585,
+   "rho": 0.749,
+   "R2_recipe": 0.663,
+   "n": 617
+  },
+  "Optical (hand-crafted) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.497,
+   "rho": 0.684,
+   "R2_recipe": 0.574,
+   "n": 617
+  },
+  "Optical (hand-crafted) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.369,
+   "rho": 0.622,
+   "R2_recipe": 0.449,
+   "n": 617
+  },
+  "Optical (hand-crafted) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": 0.283,
+   "rho": 0.597,
+   "R2_recipe": 0.389,
+   "n": 59
+  },
+  "Optical (hand-crafted) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": -0.112,
+   "rho": 0.357,
+   "R2_recipe": 0.068,
+   "n": 190
+  },
+  "Optical (hand-crafted) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.528,
+   "rho": 0.755,
+   "R2_recipe": 0.604,
+   "n": 617
+  },
+  "Optical (hand-crafted) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.498,
+   "rho": 0.732,
+   "R2_recipe": 0.578,
+   "n": 617
+  },
+  "Optical (hand-crafted) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.467,
+   "rho": 0.715,
+   "R2_recipe": 0.548,
+   "n": 617
+  },
+  "Optical (hand-crafted) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": 0.49,
+   "rho": 0.716,
+   "R2_recipe": 0.554,
+   "n": 307
+  },
+  "Optical (hand-crafted) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": 0.427,
+   "rho": 0.733,
+   "R2_recipe": 0.545,
+   "n": 310
+  },
+  "Optical (hand-crafted) | MgSO4_mM | P1 recipe CV": {
+   "R2": 0.019,
+   "rho": 0.19,
+   "R2_recipe": 0.032,
+   "n": 617
+  },
+  "Optical (hand-crafted) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": -0.161,
+   "rho": -0.071,
+   "R2_recipe": -0.148,
+   "n": 617
+  },
+  "Optical (hand-crafted) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": -0.138,
+   "rho": -0.009,
+   "R2_recipe": -0.125,
+   "n": 617
+  },
+  "Optical (hand-crafted) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": -0.418,
+   "rho": 0.103,
+   "R2_recipe": -0.366,
+   "n": 307
+  },
+  "Optical (hand-crafted) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": -0.34,
+   "rho": -0.081,
+   "R2_recipe": -0.282,
+   "n": 310
+  },
+  "Optical (ResNet18) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.799,
+   "rho": 0.89,
+   "R2_recipe": 0.85,
+   "n": 617
+  },
+  "Optical (ResNet18) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.689,
+   "rho": 0.837,
+   "R2_recipe": 0.745,
+   "n": 617
+  },
+  "Optical (ResNet18) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.371,
+   "rho": 0.668,
+   "R2_recipe": 0.43,
+   "n": 617
+  },
+  "Optical (ResNet18) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": 0.869,
+   "rho": 0.82,
+   "R2_recipe": 0.909,
+   "n": 59
+  },
+  "Optical (ResNet18) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": 0.34,
+   "rho": 0.592,
+   "R2_recipe": 0.357,
+   "n": 190
+  },
+  "Optical (ResNet18) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.657,
+   "rho": 0.821,
+   "R2_recipe": 0.727,
+   "n": 617
+  },
+  "Optical (ResNet18) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.579,
+   "rho": 0.767,
+   "R2_recipe": 0.653,
+   "n": 617
+  },
+  "Optical (ResNet18) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.531,
+   "rho": 0.757,
+   "R2_recipe": 0.607,
+   "n": 617
+  },
+  "Optical (ResNet18) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": 0.272,
+   "rho": 0.742,
+   "R2_recipe": 0.33,
+   "n": 307
+  },
+  "Optical (ResNet18) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": 0.197,
+   "rho": 0.628,
+   "R2_recipe": 0.258,
+   "n": 310
+  },
+  "Optical (ResNet18) | MgSO4_mM | P1 recipe CV": {
+   "R2": 0.349,
+   "rho": 0.609,
+   "R2_recipe": 0.459,
+   "n": 617
+  },
+  "Optical (ResNet18) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": 0.062,
+   "rho": 0.382,
+   "R2_recipe": 0.166,
+   "n": 617
+  },
+  "Optical (ResNet18) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.097,
+   "rho": 0.406,
+   "R2_recipe": 0.204,
+   "n": 617
+  },
+  "Optical (ResNet18) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": -0.12,
+   "rho": 0.357,
+   "R2_recipe": -0.014,
+   "n": 307
+  },
+  "Optical (ResNet18) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": -0.185,
+   "rho": 0.399,
+   "R2_recipe": -0.038,
+   "n": 310
+  },
+  "Geometry (EDS + optical diameter) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.406,
+   "rho": 0.598,
+   "R2_recipe": 0.468,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.218,
+   "rho": 0.448,
+   "R2_recipe": 0.289,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": -0.079,
+   "rho": 0.273,
+   "R2_recipe": -0.007,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": -0.314,
+   "rho": -0.303,
+   "R2_recipe": -0.31,
+   "n": 59
+  },
+  "Geometry (EDS + optical diameter) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": -0.305,
+   "rho": -0.348,
+   "R2_recipe": -0.303,
+   "n": 190
+  },
+  "Geometry (EDS + optical diameter) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.157,
+   "rho": 0.504,
+   "R2_recipe": 0.245,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.122,
+   "rho": 0.503,
+   "R2_recipe": 0.23,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.062,
+   "rho": 0.402,
+   "R2_recipe": 0.12,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": -0.059,
+   "rho": 0.398,
+   "R2_recipe": -0.006,
+   "n": 307
+  },
+  "Geometry (EDS + optical diameter) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": -0.262,
+   "rho": 0.629,
+   "R2_recipe": 0.056,
+   "n": 310
+  },
+  "Geometry (EDS + optical diameter) | MgSO4_mM | P1 recipe CV": {
+   "R2": -0.012,
+   "rho": -0.001,
+   "R2_recipe": 0.018,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": -0.151,
+   "rho": -0.335,
+   "R2_recipe": -0.124,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": -0.117,
+   "rho": -0.348,
+   "R2_recipe": -0.105,
+   "n": 617
+  },
+  "Geometry (EDS + optical diameter) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": -0.256,
+   "rho": 0.094,
+   "R2_recipe": -0.246,
+   "n": 307
+  },
+  "Geometry (EDS + optical diameter) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": -0.235,
+   "rho": -0.055,
+   "R2_recipe": -0.208,
+   "n": 310
+  },
+  "Detector mode only | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.571,
+   "rho": 0.651,
+   "R2_recipe": 0.574,
+   "n": 617
+  },
+  "Detector mode only | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.37,
+   "rho": 0.496,
+   "R2_recipe": 0.374,
+   "n": 617
+  },
+  "Detector mode only | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.226,
+   "rho": 0.462,
+   "R2_recipe": 0.233,
+   "n": 617
+  },
+  "Detector mode only | CaCl2_mM | P1 recipe CV": {
+   "R2": -0.016,
+   "rho": -0.165,
+   "R2_recipe": -0.015,
+   "n": 617
+  },
+  "Detector mode only | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": -0.006,
+   "rho": -0.177,
+   "R2_recipe": -0.006,
+   "n": 617
+  },
+  "Detector mode only | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": -0.014,
+   "rho": -0.153,
+   "R2_recipe": -0.014,
+   "n": 617
+  },
+  "Detector mode only | MgSO4_mM | P1 recipe CV": {
+   "R2": 0.015,
+   "rho": 0.087,
+   "R2_recipe": 0.011,
+   "n": 617
+  },
+  "Detector mode only | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": -0.126,
+   "rho": -0.058,
+   "R2_recipe": -0.131,
+   "n": 617
+  },
+  "Detector mode only | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": -0.105,
+   "rho": -0.047,
+   "R2_recipe": -0.11,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | NaHCO3_mM | P1 recipe CV": {
+   "R2": 0.878,
+   "rho": 0.936,
+   "R2_recipe": 0.909,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | NaHCO3_mM | P2 leave-one-session-out": {
+   "R2": 0.684,
+   "rho": 0.834,
+   "R2_recipe": 0.724,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | NaHCO3_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.3,
+   "rho": 0.608,
+   "R2_recipe": 0.343,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | NaHCO3_mM | P3 train BEC -> test SEI": {
+   "R2": 0.043,
+   "rho": 0.374,
+   "R2_recipe": 0.108,
+   "n": 59
+  },
+  "EDS + SEM (ResNet18) | NaHCO3_mM | P3 train SEI -> test BEC": {
+   "R2": 0.2,
+   "rho": 0.705,
+   "R2_recipe": 0.213,
+   "n": 190
+  },
+  "EDS + SEM (ResNet18) | CaCl2_mM | P1 recipe CV": {
+   "R2": 0.771,
+   "rho": 0.879,
+   "R2_recipe": 0.826,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | CaCl2_mM | P2 leave-one-session-out": {
+   "R2": 0.743,
+   "rho": 0.864,
+   "R2_recipe": 0.797,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | CaCl2_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.667,
+   "rho": 0.834,
+   "R2_recipe": 0.725,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | CaCl2_mM | P3 train BEC -> test SEI": {
+   "R2": -0.048,
+   "rho": 0.673,
+   "R2_recipe": 0.005,
+   "n": 307
+  },
+  "EDS + SEM (ResNet18) | CaCl2_mM | P3 train SEI -> test BEC": {
+   "R2": 0.153,
+   "rho": 0.451,
+   "R2_recipe": 0.206,
+   "n": 310
+  },
+  "EDS + SEM (ResNet18) | MgSO4_mM | P1 recipe CV": {
+   "R2": 0.768,
+   "rho": 0.89,
+   "R2_recipe": 0.82,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | MgSO4_mM | P2 leave-one-session-out": {
+   "R2": 0.672,
+   "rho": 0.823,
+   "R2_recipe": 0.726,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | MgSO4_mM | P2o leave-one-optical-date-out": {
+   "R2": 0.632,
+   "rho": 0.798,
+   "R2_recipe": 0.694,
+   "n": 617
+  },
+  "EDS + SEM (ResNet18) | MgSO4_mM | P3 train BEC -> test SEI": {
+   "R2": 0.36,
+   "rho": 0.614,
+   "R2_recipe": 0.408,
+   "n": 307
+  },
+  "EDS + SEM (ResNet18) | MgSO4_mM | P3 train SEI -> test BEC": {
+   "R2": 0.556,
+   "rho": 0.754,
+   "R2_recipe": 0.636,
+   "n": 310
+  }
+ },
+ "H2": {
+  "SEM (hand-crafted) | C | P1 recipe CV": {
+   "R2": 0.042,
+   "rho": 0.363,
+   "n": 617
+  },
+  "SEM (hand-crafted) | C | P2 leave-one-session-out": {
+   "R2": -0.121,
+   "rho": 0.235,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Ca | P1 recipe CV": {
+   "R2": -0.051,
+   "rho": 0.246,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Ca | P2 leave-one-session-out": {
+   "R2": -0.112,
+   "rho": 0.142,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Cl | P1 recipe CV": {
+   "R2": 0.047,
+   "rho": 0.318,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Cl | P2 leave-one-session-out": {
+   "R2": -0.08,
+   "rho": 0.166,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Mg | P1 recipe CV": {
+   "R2": 0.087,
+   "rho": 0.204,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Mg | P2 leave-one-session-out": {
+   "R2": 0.027,
+   "rho": 0.11,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Na | P1 recipe CV": {
+   "R2": 0.448,
+   "rho": 0.71,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Na | P2 leave-one-session-out": {
+   "R2": 0.433,
+   "rho": 0.675,
+   "n": 617
+  },
+  "SEM (hand-crafted) | O | P1 recipe CV": {
+   "R2": 0.22,
+   "rho": 0.428,
+   "n": 617
+  },
+  "SEM (hand-crafted) | O | P2 leave-one-session-out": {
+   "R2": 0.19,
+   "rho": 0.377,
+   "n": 617
+  },
+  "SEM (hand-crafted) | S | P1 recipe CV": {
+   "R2": 0.215,
+   "rho": 0.408,
+   "n": 617
+  },
+  "SEM (hand-crafted) | S | P2 leave-one-session-out": {
+   "R2": 0.168,
+   "rho": 0.345,
+   "n": 617
+  },
+  "SEM (ResNet18) | C | P1 recipe CV": {
+   "R2": 0.218,
+   "rho": 0.412,
+   "n": 617
+  },
+  "SEM (ResNet18) | C | P2 leave-one-session-out": {
+   "R2": -0.005,
+   "rho": 0.249,
+   "n": 617
+  },
+  "SEM (ResNet18) | Ca | P1 recipe CV": {
+   "R2": 0.173,
+   "rho": 0.451,
+   "n": 617
+  },
+  "SEM (ResNet18) | Ca | P2 leave-one-session-out": {
+   "R2": -0.081,
+   "rho": 0.196,
+   "n": 617
+  },
+  "SEM (ResNet18) | Cl | P1 recipe CV": {
+   "R2": 0.289,
+   "rho": 0.554,
+   "n": 617
+  },
+  "SEM (ResNet18) | Cl | P2 leave-one-session-out": {
+   "R2": 0.065,
+   "rho": 0.363,
+   "n": 617
+  },
+  "SEM (ResNet18) | Mg | P1 recipe CV": {
+   "R2": 0.276,
+   "rho": 0.573,
+   "n": 617
+  },
+  "SEM (ResNet18) | Mg | P2 leave-one-session-out": {
+   "R2": 0.17,
+   "rho": 0.463,
+   "n": 617
+  },
+  "SEM (ResNet18) | Na | P1 recipe CV": {
+   "R2": 0.704,
+   "rho": 0.831,
+   "n": 617
+  },
+  "SEM (ResNet18) | Na | P2 leave-one-session-out": {
+   "R2": 0.458,
+   "rho": 0.688,
+   "n": 617
+  },
+  "SEM (ResNet18) | O | P1 recipe CV": {
+   "R2": 0.477,
+   "rho": 0.68,
+   "n": 617
+  },
+  "SEM (ResNet18) | O | P2 leave-one-session-out": {
+   "R2": 0.262,
+   "rho": 0.484,
+   "n": 617
+  },
+  "SEM (ResNet18) | S | P1 recipe CV": {
+   "R2": 0.543,
+   "rho": 0.745,
+   "n": 617
+  },
+  "SEM (ResNet18) | S | P2 leave-one-session-out": {
+   "R2": 0.429,
+   "rho": 0.646,
+   "n": 617
+  },
+  "Concentrations (oracle) | C | P1 recipe CV": {
+   "R2": 0.119,
+   "rho": 0.368,
+   "n": 617
+  },
+  "Concentrations (oracle) | C | P2 leave-one-session-out": {
+   "R2": -0.155,
+   "rho": 0.113,
+   "n": 617
+  },
+  "Concentrations (oracle) | Ca | P1 recipe CV": {
+   "R2": 0.136,
+   "rho": 0.315,
+   "n": 617
+  },
+  "Concentrations (oracle) | Ca | P2 leave-one-session-out": {
+   "R2": -0.015,
+   "rho": 0.134,
+   "n": 617
+  },
+  "Concentrations (oracle) | Cl | P1 recipe CV": {
+   "R2": 0.282,
+   "rho": 0.552,
+   "n": 617
+  },
+  "Concentrations (oracle) | Cl | P2 leave-one-session-out": {
+   "R2": 0.228,
+   "rho": 0.496,
+   "n": 617
+  },
+  "Concentrations (oracle) | Mg | P1 recipe CV": {
+   "R2": 0.558,
+   "rho": 0.909,
+   "n": 617
+  },
+  "Concentrations (oracle) | Mg | P2 leave-one-session-out": {
+   "R2": 0.558,
+   "rho": 0.908,
+   "n": 617
+  },
+  "Concentrations (oracle) | Na | P1 recipe CV": {
+   "R2": 0.672,
+   "rho": 0.818,
+   "n": 617
+  },
+  "Concentrations (oracle) | Na | P2 leave-one-session-out": {
+   "R2": 0.621,
+   "rho": 0.796,
+   "n": 617
+  },
+  "Concentrations (oracle) | O | P1 recipe CV": {
+   "R2": 0.627,
+   "rho": 0.849,
+   "n": 617
+  },
+  "Concentrations (oracle) | O | P2 leave-one-session-out": {
+   "R2": 0.615,
+   "rho": 0.833,
+   "n": 617
+  },
+  "Concentrations (oracle) | S | P1 recipe CV": {
+   "R2": 0.674,
+   "rho": 0.867,
+   "n": 617
+  },
+  "Concentrations (oracle) | S | P2 leave-one-session-out": {
+   "R2": 0.665,
+   "rho": 0.858,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | C | P1 recipe CV": {
+   "R2": 0.286,
+   "rho": 0.545,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | Ca | P1 recipe CV": {
+   "R2": 0.054,
+   "rho": 0.285,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | Cl | P1 recipe CV": {
+   "R2": 0.349,
+   "rho": 0.635,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | Mg | P1 recipe CV": {
+   "R2": 0.519,
+   "rho": 0.894,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | Na | P1 recipe CV": {
+   "R2": 0.769,
+   "rho": 0.883,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | O | P1 recipe CV": {
+   "R2": 0.629,
+   "rho": 0.854,
+   "n": 617
+  },
+  "Concentrations + session (oracle) | S | P1 recipe CV": {
+   "R2": 0.646,
+   "rho": 0.855,
+   "n": 617
+  },
+  "SEM (hand-crafted) | C | within-recipe (P1 folds)": {
+   "R2": 0.133,
+   "rho": 0.356,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Ca | within-recipe (P1 folds)": {
+   "R2": 0.043,
+   "rho": 0.231,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Cl | within-recipe (P1 folds)": {
+   "R2": 0.087,
+   "rho": 0.281,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Mg | within-recipe (P1 folds)": {
+   "R2": -0.003,
+   "rho": 0.311,
+   "n": 617
+  },
+  "SEM (hand-crafted) | Na | within-recipe (P1 folds)": {
+   "R2": -0.007,
+   "rho": 0.125,
+   "n": 617
+  },
+  "SEM (hand-crafted) | O | within-recipe (P1 folds)": {
+   "R2": 0.098,
+   "rho": 0.424,
+   "n": 617
+  },
+  "SEM (hand-crafted) | S | within-recipe (P1 folds)": {
+   "R2": 0.085,
+   "rho": 0.33,
+   "n": 617
+  },
+  "SEM (ResNet18) | C | within-recipe (P1 folds)": {
+   "R2": 0.021,
+   "rho": 0.189,
+   "n": 617
+  },
+  "SEM (ResNet18) | Ca | within-recipe (P1 folds)": {
+   "R2": 0.085,
+   "rho": 0.248,
+   "n": 617
+  },
+  "SEM (ResNet18) | Cl | within-recipe (P1 folds)": {
+   "R2": 0.137,
+   "rho": 0.333,
+   "n": 617
+  },
+  "SEM (ResNet18) | Mg | within-recipe (P1 folds)": {
+   "R2": -0.002,
+   "rho": 0.109,
+   "n": 617
+  },
+  "SEM (ResNet18) | Na | within-recipe (P1 folds)": {
+   "R2": 0.018,
+   "rho": 0.203,
+   "n": 617
+  },
+  "SEM (ResNet18) | O | within-recipe (P1 folds)": {
+   "R2": 0.104,
+   "rho": 0.314,
+   "n": 617
+  },
+  "SEM (ResNet18) | S | within-recipe (P1 folds)": {
+   "R2": 0.073,
+   "rho": 0.241,
+   "n": 617
+  }
+ }
+}

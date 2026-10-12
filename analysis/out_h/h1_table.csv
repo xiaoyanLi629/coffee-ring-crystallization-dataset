@@ -1,0 +1,115 @@
+input,target,protocol,R2,rho,n,R2_recipe
+EDS (hand-crafted),NaHCO3_mM,P1 recipe CV,0.756,0.912,617,0.864
+EDS (hand-crafted),NaHCO3_mM,P2 leave-one-session-out,0.655,0.858,617,0.767
+EDS (hand-crafted),NaHCO3_mM,P2o leave-one-optical-date-out,0.423,0.704,617,0.53
+EDS (hand-crafted),NaHCO3_mM,P3 train BEC -> test SEI,0.373,0.624,59,0.484
+EDS (hand-crafted),NaHCO3_mM,P3 train SEI -> test BEC,0.194,0.617,190,0.246
+EDS (hand-crafted),CaCl2_mM,P1 recipe CV,0.765,0.885,617,0.829
+EDS (hand-crafted),CaCl2_mM,P2 leave-one-session-out,0.696,0.849,617,0.774
+EDS (hand-crafted),CaCl2_mM,P2o leave-one-optical-date-out,0.582,0.809,617,0.662
+EDS (hand-crafted),CaCl2_mM,P3 train BEC -> test SEI,0.482,0.787,307,0.523
+EDS (hand-crafted),CaCl2_mM,P3 train SEI -> test BEC,0.254,0.844,310,0.36
+EDS (hand-crafted),MgSO4_mM,P1 recipe CV,0.771,0.888,617,0.843
+EDS (hand-crafted),MgSO4_mM,P2 leave-one-session-out,0.713,0.852,617,0.793
+EDS (hand-crafted),MgSO4_mM,P2o leave-one-optical-date-out,0.627,0.809,617,0.712
+EDS (hand-crafted),MgSO4_mM,P3 train BEC -> test SEI,0.515,0.698,307,0.547
+EDS (hand-crafted),MgSO4_mM,P3 train SEI -> test BEC,0.438,0.773,310,0.715
+SEM (hand-crafted),NaHCO3_mM,P1 recipe CV,0.529,0.801,617,0.651
+SEM (hand-crafted),NaHCO3_mM,P2 leave-one-session-out,0.4,0.728,617,0.485
+SEM (hand-crafted),NaHCO3_mM,P2o leave-one-optical-date-out,0.264,0.578,617,0.386
+SEM (hand-crafted),NaHCO3_mM,P3 train BEC -> test SEI,-1.053,0.692,59,-1.023
+SEM (hand-crafted),NaHCO3_mM,P3 train SEI -> test BEC,-5.69,0.246,190,-4.461
+SEM (hand-crafted),CaCl2_mM,P1 recipe CV,0.112,0.406,617,0.169
+SEM (hand-crafted),CaCl2_mM,P2 leave-one-session-out,0.044,0.298,617,0.102
+SEM (hand-crafted),CaCl2_mM,P2o leave-one-optical-date-out,0.083,0.321,617,0.134
+SEM (hand-crafted),CaCl2_mM,P3 train BEC -> test SEI,-0.675,-0.074,307,-0.528
+SEM (hand-crafted),CaCl2_mM,P3 train SEI -> test BEC,-4.457,0.275,310,-4.089
+SEM (hand-crafted),MgSO4_mM,P1 recipe CV,-0.023,0.129,617,0.054
+SEM (hand-crafted),MgSO4_mM,P2 leave-one-session-out,-0.241,-0.064,617,-0.154
+SEM (hand-crafted),MgSO4_mM,P2o leave-one-optical-date-out,-0.145,0.0,617,-0.081
+SEM (hand-crafted),MgSO4_mM,P3 train BEC -> test SEI,-1.198,0.012,307,-1.104
+SEM (hand-crafted),MgSO4_mM,P3 train SEI -> test BEC,-3.68,0.333,310,-2.329
+SEM (ResNet18),NaHCO3_mM,P1 recipe CV,0.821,0.902,617,0.87
+SEM (ResNet18),NaHCO3_mM,P2 leave-one-session-out,0.495,0.742,617,0.559
+SEM (ResNet18),NaHCO3_mM,P2o leave-one-optical-date-out,0.085,0.524,617,0.147
+SEM (ResNet18),NaHCO3_mM,P3 train BEC -> test SEI,-0.086,0.24,59,-0.025
+SEM (ResNet18),NaHCO3_mM,P3 train SEI -> test BEC,0.177,0.625,190,0.196
+SEM (ResNet18),CaCl2_mM,P1 recipe CV,0.592,0.775,617,0.675
+SEM (ResNet18),CaCl2_mM,P2 leave-one-session-out,0.523,0.725,617,0.612
+SEM (ResNet18),CaCl2_mM,P2o leave-one-optical-date-out,0.429,0.661,617,0.516
+SEM (ResNet18),CaCl2_mM,P3 train BEC -> test SEI,-1.116,0.183,307,-1.036
+SEM (ResNet18),CaCl2_mM,P3 train SEI -> test BEC,-0.447,-0.039,310,-0.371
+SEM (ResNet18),MgSO4_mM,P1 recipe CV,0.338,0.57,617,0.436
+SEM (ResNet18),MgSO4_mM,P2 leave-one-session-out,0.081,0.342,617,0.175
+SEM (ResNet18),MgSO4_mM,P2o leave-one-optical-date-out,0.008,0.34,617,0.117
+SEM (ResNet18),MgSO4_mM,P3 train BEC -> test SEI,-0.998,0.18,307,-0.884
+SEM (ResNet18),MgSO4_mM,P3 train SEI -> test BEC,-0.47,-0.112,310,-0.332
+Optical (hand-crafted),NaHCO3_mM,P1 recipe CV,0.585,0.749,617,0.663
+Optical (hand-crafted),NaHCO3_mM,P2 leave-one-session-out,0.497,0.684,617,0.574
+Optical (hand-crafted),NaHCO3_mM,P2o leave-one-optical-date-out,0.369,0.622,617,0.449
+Optical (hand-crafted),NaHCO3_mM,P3 train BEC -> test SEI,0.283,0.597,59,0.389
+Optical (hand-crafted),NaHCO3_mM,P3 train SEI -> test BEC,-0.112,0.357,190,0.068
+Optical (hand-crafted),CaCl2_mM,P1 recipe CV,0.528,0.755,617,0.604
+Optical (hand-crafted),CaCl2_mM,P2 leave-one-session-out,0.498,0.732,617,0.578
+Optical (hand-crafted),CaCl2_mM,P2o leave-one-optical-date-out,0.467,0.715,617,0.548
+Optical (hand-crafted),CaCl2_mM,P3 train BEC -> test SEI,0.49,0.716,307,0.554
+Optical (hand-crafted),CaCl2_mM,P3 train SEI -> test BEC,0.427,0.733,310,0.545
+Optical (hand-crafted),MgSO4_mM,P1 recipe CV,0.019,0.19,617,0.032
+Optical (hand-crafted),MgSO4_mM,P2 leave-one-session-out,-0.161,-0.071,617,-0.148
+Optical (hand-crafted),MgSO4_mM,P2o leave-one-optical-date-out,-0.138,-0.009,617,-0.125
+Optical (hand-crafted),MgSO4_mM,P3 train BEC -> test SEI,-0.418,0.103,307,-0.366
+Optical (hand-crafted),MgSO4_mM,P3 train SEI -> test BEC,-0.34,-0.081,310,-0.282
+Optical (ResNet18),NaHCO3_mM,P1 recipe CV,0.799,0.89,617,0.85
+Optical (ResNet18),NaHCO3_mM,P2 leave-one-session-out,0.689,0.837,617,0.745
+Optical (ResNet18),NaHCO3_mM,P2o leave-one-optical-date-out,0.371,0.668,617,0.43
+Optical (ResNet18),NaHCO3_mM,P3 train BEC -> test SEI,0.869,0.82,59,0.909
+Optical (ResNet18),NaHCO3_mM,P3 train SEI -> test BEC,0.34,0.592,190,0.357
+Optical (ResNet18),CaCl2_mM,P1 recipe CV,0.657,0.821,617,0.727
+Optical (ResNet18),CaCl2_mM,P2 leave-one-session-out,0.579,0.767,617,0.653
+Optical (ResNet18),CaCl2_mM,P2o leave-one-optical-date-out,0.531,0.757,617,0.607
+Optical (ResNet18),CaCl2_mM,P3 train BEC -> test SEI,0.272,0.742,307,0.33
+Optical (ResNet18),CaCl2_mM,P3 train SEI -> test BEC,0.197,0.628,310,0.258
+Optical (ResNet18),MgSO4_mM,P1 recipe CV,0.349,0.609,617,0.459
+Optical (ResNet18),MgSO4_mM,P2 leave-one-session-out,0.062,0.382,617,0.166
+Optical (ResNet18),MgSO4_mM,P2o leave-one-optical-date-out,0.097,0.406,617,0.204
+Optical (ResNet18),MgSO4_mM,P3 train BEC -> test SEI,-0.12,0.357,307,-0.014
+Optical (ResNet18),MgSO4_mM,P3 train SEI -> test BEC,-0.185,0.399,310,-0.038
+Geometry (EDS + optical diameter),NaHCO3_mM,P1 recipe CV,0.406,0.598,617,0.468
+Geometry (EDS + optical diameter),NaHCO3_mM,P2 leave-one-session-out,0.218,0.448,617,0.289
+Geometry (EDS + optical diameter),NaHCO3_mM,P2o leave-one-optical-date-out,-0.079,0.273,617,-0.007
+Geometry (EDS + optical diameter),NaHCO3_mM,P3 train BEC -> test SEI,-0.314,-0.303,59,-0.31
+Geometry (EDS + optical diameter),NaHCO3_mM,P3 train SEI -> test BEC,-0.305,-0.348,190,-0.303
+Geometry (EDS + optical diameter),CaCl2_mM,P1 recipe CV,0.157,0.504,617,0.245
+Geometry (EDS + optical diameter),CaCl2_mM,P2 leave-one-session-out,0.122,0.503,617,0.23
+Geometry (EDS + optical diameter),CaCl2_mM,P2o leave-one-optical-date-out,0.062,0.402,617,0.12
+Geometry (EDS + optical diameter),CaCl2_mM,P3 train BEC -> test SEI,-0.059,0.398,307,-0.006
+Geometry (EDS + optical diameter),CaCl2_mM,P3 train SEI -> test BEC,-0.262,0.629,310,0.056
+Geometry (EDS + optical diameter),MgSO4_mM,P1 recipe CV,-0.012,-0.001,617,0.018
+Geometry (EDS + optical diameter),MgSO4_mM,P2 leave-one-session-out,-0.151,-0.335,617,-0.124
+Geometry (EDS + optical diameter),MgSO4_mM,P2o leave-one-optical-date-out,-0.117,-0.348,617,-0.105
+Geometry (EDS + optical diameter),MgSO4_mM,P3 train BEC -> test SEI,-0.256,0.094,307,-0.246
+Geometry (EDS + optical diameter),MgSO4_mM,P3 train SEI -> test BEC,-0.235,-0.055,310,-0.208
+Detector mode only,NaHCO3_mM,P1 recipe CV,0.571,0.651,617,0.574
+Detector mode only,NaHCO3_mM,P2 leave-one-session-out,0.37,0.496,617,0.374
+Detector mode only,NaHCO3_mM,P2o leave-one-optical-date-out,0.226,0.462,617,0.233
+Detector mode only,CaCl2_mM,P1 recipe CV,-0.016,-0.165,617,-0.015
+Detector mode only,CaCl2_mM,P2 leave-one-session-out,-0.006,-0.177,617,-0.006
+Detector mode only,CaCl2_mM,P2o leave-one-optical-date-out,-0.014,-0.153,617,-0.014
+Detector mode only,MgSO4_mM,P1 recipe CV,0.015,0.087,617,0.011
+Detector mode only,MgSO4_mM,P2 leave-one-session-out,-0.126,-0.058,617,-0.131
+Detector mode only,MgSO4_mM,P2o leave-one-optical-date-out,-0.105,-0.047,617,-0.11
+EDS + SEM (ResNet18),NaHCO3_mM,P1 recipe CV,0.878,0.936,617,0.909
+EDS + SEM (ResNet18),NaHCO3_mM,P2 leave-one-session-out,0.684,0.834,617,0.724
+EDS + SEM (ResNet18),NaHCO3_mM,P2o leave-one-optical-date-out,0.3,0.608,617,0.343
+EDS + SEM (ResNet18),NaHCO3_mM,P3 train BEC -> test SEI,0.043,0.374,59,0.108
+EDS + SEM (ResNet18),NaHCO3_mM,P3 train SEI -> test BEC,0.2,0.705,190,0.213
+EDS + SEM (ResNet18),CaCl2_mM,P1 recipe CV,0.771,0.879,617,0.826
+EDS + SEM (ResNet18),CaCl2_mM,P2 leave-one-session-out,0.743,0.864,617,0.797
+EDS + SEM (ResNet18),CaCl2_mM,P2o leave-one-optical-date-out,0.667,0.834,617,0.725
+EDS + SEM (ResNet18),CaCl2_mM,P3 train BEC -> test SEI,-0.048,0.673,307,0.005
+EDS + SEM (ResNet18),CaCl2_mM,P3 train SEI -> test BEC,0.153,0.451,310,0.206
+EDS + SEM (ResNet18),MgSO4_mM,P1 recipe CV,0.768,0.89,617,0.82
+EDS + SEM (ResNet18),MgSO4_mM,P2 leave-one-session-out,0.672,0.823,617,0.726
+EDS + SEM (ResNet18),MgSO4_mM,P2o leave-one-optical-date-out,0.632,0.798,617,0.694
+EDS + SEM (ResNet18),MgSO4_mM,P3 train BEC -> test SEI,0.36,0.614,307,0.408
+EDS + SEM (ResNet18),MgSO4_mM,P3 train SEI -> test BEC,0.556,0.754,310,0.636
