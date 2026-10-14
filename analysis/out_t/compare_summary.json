@@ -1,0 +1,280 @@
+{
+ "n_recipes": 125,
+ "frac_paths_reaching_aw0475": 0.656,
+ "tests": [
+  {
+   "predicted": "Gypsum_mmol",
+   "observed": "coloc_Ca-S",
+   "expected_sign": 1,
+   "hypothesis": "more gypsum -> stronger Ca-S co-localisation",
+   "rho_all": 0.48,
+   "p_all": 1.4652541344198795e-08,
+   "rho_within_table_median": 0.402,
+   "rho_within_table": [
+    0.515,
+    0.431,
+    0.368,
+    0.402,
+    0.396
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "Calcite_mmol",
+   "observed": "coloc_C-Ca",
+   "expected_sign": 1,
+   "hypothesis": "more calcite -> stronger C-Ca co-localisation",
+   "rho_all": 0.29,
+   "p_all": 0.0010241634732799211,
+   "rho_within_table_median": 0.337,
+   "rho_within_table": [
+    0.315,
+    -0.188,
+    0.337,
+    0.577,
+    0.367
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "Halite_mmol",
+   "observed": "coloc_Cl-Na",
+   "expected_sign": 1,
+   "hypothesis": "more halite -> stronger Na-Cl co-localisation",
+   "rho_all": 0.227,
+   "p_all": 0.010983945355608213,
+   "rho_within_table_median": 0.307,
+   "rho_within_table": [
+    0.307,
+    0.684,
+    0.291,
+    0.018,
+    0.315
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "MgSO4_solid_mmol",
+   "observed": "coloc_Mg-S",
+   "expected_sign": 1,
+   "hypothesis": "more solid Mg sulfate -> Mg-S co-localisation",
+   "rho_all": 0.705,
+   "p_all": 4.1419442028468603e-20,
+   "rho_within_table_median": 0.759,
+   "rho_within_table": [
+    0.759,
+    0.837,
+    0.845,
+    0.715,
+    0.265
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "MgSO4_solid_mmol",
+   "observed": "Mg_d",
+   "expected_sign": 1,
+   "hypothesis": "more solid Mg sulfate -> stronger Mg signal",
+   "rho_all": 0.724,
+   "p_all": 1.519993288348738e-21,
+   "rho_within_table_median": 0.814,
+   "rho_within_table": [
+    0.613,
+    0.87,
+    0.824,
+    0.814,
+    0.71
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "f_Ca_gypsum",
+   "observed": "coloc_Ca-S",
+   "expected_sign": 1,
+   "hypothesis": "more Ca as gypsum -> stronger Ca-S co-localisation",
+   "rho_all": 0.045,
+   "p_all": 0.61779627808052,
+   "rho_within_table_median": -0.163,
+   "rho_within_table": [
+    -0.163,
+    -0.131,
+    -0.166,
+    -0.232,
+    0.126
+   ],
+   "agrees": false
+  },
+  {
+   "predicted": "f_Ca_calcite",
+   "observed": "coloc_C-Ca",
+   "expected_sign": 1,
+   "hypothesis": "more Ca as calcite -> stronger C-Ca co-localisation",
+   "rho_all": 0.242,
+   "p_all": 0.006640481209309162,
+   "rho_within_table_median": 0.141,
+   "rho_within_table": [
+    -0.212,
+    0.008,
+    0.159,
+    0.141,
+    0.395
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "f_Ca_calcite",
+   "observed": "coloc_C-O",
+   "expected_sign": 1,
+   "hypothesis": "more carbonate solid -> stronger C-O co-localisation",
+   "rho_all": 0.275,
+   "p_all": 0.001874643609580304,
+   "rho_within_table_median": 0.331,
+   "rho_within_table": [
+    0.278,
+    0.265,
+    0.642,
+    0.727,
+    0.331
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "calcite_to_gypsum",
+   "observed": "coloc_Ca-S",
+   "expected_sign": -1,
+   "hypothesis": "calcite:gypsum ratio up -> Ca-S co-localisation down",
+   "rho_all": -0.322,
+   "p_all": 0.00024535169902027,
+   "rho_within_table_median": -0.212,
+   "rho_within_table": [
+    -0.408,
+    -0.236,
+    -0.073,
+    0.066,
+    -0.212
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "gypsum_onset_log10cf",
+   "observed": "S_rbar",
+   "expected_sign": -1,
+   "hypothesis": "earlier gypsum saturation -> S closer to the rim",
+   "rho_all": -0.271,
+   "p_all": 0.003410247957302465,
+   "rho_within_table_median": -0.228,
+   "rho_within_table": [
+    -0.132,
+    -0.228,
+    -0.475,
+    -0.512,
+    -0.007
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "gypsum_onset_log10cf",
+   "observed": "S_rim_index",
+   "expected_sign": -1,
+   "hypothesis": "earlier gypsum saturation -> stronger S rim enrichment",
+   "rho_all": -0.098,
+   "p_all": 0.295422017704117,
+   "rho_within_table_median": -0.07,
+   "rho_within_table": [
+    0.079,
+    -0.07,
+    -0.265,
+    -0.265,
+    0.457
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "f_Mg_solid",
+   "observed": "coloc_Mg-S",
+   "expected_sign": 1,
+   "hypothesis": "more Mg sulfate solid -> Mg-S co-localisation",
+   "rho_all": 0.623,
+   "p_all": 8.351505055359492e-15,
+   "rho_within_table_median": 0.751,
+   "rho_within_table": [
+    0.751,
+    0.816,
+    0.725,
+    0.776,
+    0.391
+   ],
+   "agrees": true
+  },
+  {
+   "predicted": "f_Mg_solid",
+   "observed": "Mg_rbar",
+   "expected_sign": 1,
+   "hypothesis": "more solid Mg salt -> Mg less confined to the centre",
+   "rho_all": 0.334,
+   "p_all": 0.00014257913237522438,
+   "rho_within_table_median": 0.211,
+   "rho_within_table": [
+    0.115,
+    0.274,
+    0.211,
+    -0.055,
+    0.739
+   ],
+   "agrees": true
+  }
+ ],
+ "pred_by_NaHCO3": {
+  "f_Ca_calcite": {
+   "0.25": 0.128,
+   "0.5": 0.238,
+   "0.75": 0.308,
+   "1.0": 0.35,
+   "2.0": 0.737
+  },
+  "f_Ca_gypsum": {
+   "0.25": 0.61,
+   "0.5": 0.561,
+   "0.75": 0.521,
+   "1.0": 0.529,
+   "2.0": 0.226
+  },
+  "f_Mg_solid": {
+   "0.25": 0.116,
+   "0.5": 0.162,
+   "0.75": 0.252,
+   "1.0": 0.275,
+   "2.0": 0.514
+  }
+ },
+ "pred_by_MgSO4": {
+  "f_Ca_calcite": {
+   "0.25": 0.441,
+   "0.5": 0.391,
+   "0.75": 0.347,
+   "1.0": 0.349,
+   "2.0": 0.232
+  },
+  "f_Ca_gypsum": {
+   "0.25": 0.202,
+   "0.5": 0.383,
+   "0.75": 0.52,
+   "1.0": 0.575,
+   "2.0": 0.767
+  },
+  "f_Mg_solid": {
+   "0.25": 0.103,
+   "0.5": 0.2,
+   "0.75": 0.24,
+   "1.0": 0.301,
+   "2.0": 0.475
+  },
+  "gypsum_onset_log10cf": {
+   "0.25": 2.037,
+   "0.5": 1.853,
+   "0.75": 1.731,
+   "1.0": 1.669,
+   "2.0": 1.499
+  }
+ }
+}
