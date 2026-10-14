@@ -1,7 +1,0 @@
-,,Random Forest,Logistic Regression,SVM,Neural Network
-table,test_accuracy,1.0,0.868421052631579,0.7368421052631579,0.9736842105263158
-table,cv_mean,1.0,1.0,1.0,0.96
-ca_class,test_accuracy,1.0,1.0,1.0,1.0
-ca_class,cv_mean,1.0,1.0,1.0,1.0
-combo,test_accuracy,1.0,1.0,0.7631578947368421,1.0
-combo,cv_mean,1.0,1.0,0.8879999999999999,1.0

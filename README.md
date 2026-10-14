@@ -8,7 +8,7 @@
 
 `data/` 是数据集的发布版本，包含 Table_1 到 Table_5 的原始图像、配方与元素浓度表（recipe.csv、element_concentrations.csv、organized_recipes_detailed*.csv）以及描述性统计图（analysis/）。
 
-`experiment/` 是论文里的分析代码与结果。statistical_analysis.py、computer_vision_analysis.py、machine_learning_analysis.py 和 comprehensive_analysis.py 生成统计、特征、聚类与回归基准的 csv 和 png；image_correction.py 与 run_correction.py 做图像校正，输入是 experiment/data/（在原始图之外多了每个元素的 *_processed.jpeg），输出到 experiment/data_corrected/；recipies/ 是各元素浓度表与配方原始 xlsx。三个 README_*.md 说明分析框架、数据集分析和图像校正方法。
+`experiment/` 存原始数据：`experiment/data/` 是每个液滴的原始 SEM、EDS、光学图像和 sem.txt（另含 2021-08-31 生成的派生图 *_processed.jpeg），`recipies/` 是各元素浓度表与配方原始 xlsx。旧的统计、机器学习和图像校正脚本已于 2026-10-14 删除（在 git 历史里），`experiment/data_corrected/` 是旧校正脚本的输出，未入库。所有现行分析在 `analysis/`。
 
 `manuscript/` 是投 Scientific Data 的 Data Descriptor 稿件：manuscript.tex（Springer Nature sn-jnl 模板）、references.bib、figures/ 和已编译的 manuscript.pdf。图 1、2 由 `analysis/ms_figs.py` 生成，其余图来自各分析模块。
 

@@ -1,3 +1,0 @@
-The Scanning Electron Microscopy (SEM) and Energy-Dispersive X-ray Spectroscopy (EDS) images were acquired using a JEOL JSM-6610 SEM system, set at an accelerating voltage of 15 kV. Images were acquired at 50X magnification using backscattered electron detection (BEC) mode with a working distance of 10 mm. The accelerating voltage of the JEOL JSM-6610 can be adjusted from 300 V to 30 kV.
-
-The optimal environmental condition is a temperature range of 23-26°C and a relative humidity of 45-50%.
