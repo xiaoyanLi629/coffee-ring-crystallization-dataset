@@ -19,3 +19,6 @@ pilot/features.csv
 analysis/out_*/features_with_semnorm.csv
 analysis/out_def/*.npz
 derived/*.npz
+analysis/out_p/grains.csv
+analysis/out_t/evap_paths.csv
+analysis/out_m/*.pt

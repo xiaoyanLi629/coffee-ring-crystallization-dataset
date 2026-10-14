@@ -1,0 +1,183 @@
+{
+ "n_droplets": 619,
+ "n_grains": 84245,
+ "grains_by_phase": {
+  "Na/Mg carbonate": 25923,
+  "Mg sulfate": 16519,
+  "gypsum": 13850,
+  "halite": 13585,
+  "Ca carbonate": 8980,
+  "chloride brine": 5388
+ },
+ "median_purity": 0.459,
+ "median_fit_cos": 0.946,
+ "frac_purity_ge_0.5": 0.384,
+ "area_vs_salts_sessionFE": {
+  "halite": {
+   "NaHCO3_mM": [
+    -0.056,
+    0.11
+   ],
+   "CaCl2_mM": [
+    -0.292,
+    0.034
+   ],
+   "MgSO4_mM": [
+    -0.015,
+    0.043
+   ]
+  },
+  "gypsum": {
+   "NaHCO3_mM": [
+    -0.366,
+    0.099
+   ],
+   "CaCl2_mM": [
+    0.548,
+    0.031
+   ],
+   "MgSO4_mM": [
+    0.102,
+    0.038
+   ]
+  },
+  "Mg sulfate": {
+   "NaHCO3_mM": [
+    -0.146,
+    0.097
+   ],
+   "CaCl2_mM": [
+    -0.332,
+    0.03
+   ],
+   "MgSO4_mM": [
+    0.601,
+    0.038
+   ]
+  },
+  "Ca carbonate": {
+   "NaHCO3_mM": [
+    0.131,
+    0.123
+   ],
+   "CaCl2_mM": [
+    -0.01,
+    0.039
+   ],
+   "MgSO4_mM": [
+    -0.098,
+    0.048
+   ]
+  },
+  "Na/Mg carbonate": {
+   "NaHCO3_mM": [
+    -0.098,
+    0.129
+   ],
+   "CaCl2_mM": [
+    -0.126,
+    0.041
+   ],
+   "MgSO4_mM": [
+    -0.044,
+    0.05
+   ]
+  },
+  "chloride brine": {
+   "NaHCO3_mM": [
+    0.045,
+    0.114
+   ],
+   "CaCl2_mM": [
+    0.282,
+    0.036
+   ],
+   "MgSO4_mM": [
+    -0.06,
+    0.044
+   ]
+  }
+ },
+ "radius_median": {
+  "halite": 0.712,
+  "gypsum": 0.936,
+  "Mg sulfate": 0.727,
+  "Ca carbonate": 0.851,
+  "Na/Mg carbonate": 0.585,
+  "chloride brine": 0.621
+ },
+ "paired_outer": {
+  "gypsum outside halite": 0.949,
+  "Mg sulfate outside halite": 0.521,
+  "Mg sulfate outside gypsum": 0.048,
+  "Mg sulfate outside Na/Mg carbonate": 0.797,
+  "Mg sulfate outside chloride brine": 0.761,
+  "Ca carbonate outside halite": 0.718,
+  "Ca carbonate outside gypsum": 0.133,
+  "Ca carbonate outside Mg sulfate": 0.738,
+  "Ca carbonate outside Na/Mg carbonate": 0.884,
+  "Ca carbonate outside chloride brine": 0.832,
+  "Na/Mg carbonate outside halite": 0.264,
+  "Na/Mg carbonate outside gypsum": 0.017,
+  "Na/Mg carbonate outside chloride brine": 0.465,
+  "chloride brine outside halite": 0.333,
+  "chloride brine outside gypsum": 0.019
+ },
+ "vs_thermo": {
+  "Gypsum_mmol vs area_gypsum": {
+   "rho_all": 0.489,
+   "rho_within_table_median": 0.467,
+   "rho_within_table": [
+    0.266,
+    0.467,
+    0.485,
+    0.288,
+    0.603
+   ]
+  },
+  "MgSO4_solid_mmol vs area_Mg sulfate": {
+   "rho_all": 0.865,
+   "rho_within_table_median": 0.888,
+   "rho_within_table": [
+    0.835,
+    0.888,
+    0.926,
+    0.919,
+    0.828
+   ]
+  },
+  "Halite_mmol vs area_halite": {
+   "rho_all": 0.538,
+   "rho_within_table_median": 0.242,
+   "rho_within_table": [
+    0.16,
+    0.482,
+    0.242,
+    0.37,
+    -0.089
+   ]
+  },
+  "Calcite_mmol vs area_Ca carbonate": {
+   "rho_all": 0.386,
+   "rho_within_table_median": 0.131,
+   "rho_within_table": [
+    0.131,
+    0.103,
+    0.033,
+    0.143,
+    0.352
+   ]
+  },
+  "Calcite_mmol vs area_carbonate": {
+   "rho_all": 0.189,
+   "rho_within_table_median": -0.06,
+   "rho_within_table": [
+    0.251,
+    -0.31,
+    -0.062,
+    -0.06,
+    0.215
+   ]
+  }
+ }
+}
