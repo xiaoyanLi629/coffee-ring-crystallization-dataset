@@ -26,3 +26,5 @@ analysis/out_m/*.pt
 # release package (rebuilt by analysis/build_release.py)
 release/
 release_zenodo/
+manuscript/*.fdb_latexmk
+manuscript/*.fls
