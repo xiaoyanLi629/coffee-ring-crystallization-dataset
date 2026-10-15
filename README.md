@@ -10,7 +10,7 @@
 
 `experiment/` 存原始数据：`experiment/data/` 是每个液滴的原始 SEM、EDS、光学图像和 sem.txt（另含 2021-08-31 生成的派生图 *_processed.jpeg），`recipies/` 是各元素浓度表与配方原始 xlsx。旧的统计、机器学习和图像校正脚本已于 2026-10-14 删除（在 git 历史里），`experiment/data_corrected/` 是旧校正脚本的输出，未入库。所有现行分析在 `analysis/`。
 
-`manuscript/` 是投 Scientific Data 的 Data Descriptor 稿件：manuscript.tex（Springer Nature sn-jnl 模板）、references.bib、figures/ 和已编译的 manuscript.pdf。全部九张图由 `analysis/fig_manuscript.py` 生成。
+`manuscript/` 是投 Scientific Data 的 Data Descriptor 稿件：manuscript.tex（Springer Nature sn-jnl 模板）、references.bib、figures/ 和已编译的 manuscript.pdf。八张图由 `analysis/figures/` 生成：图 1 用 `fig1.py`，图 2–8 用 `figs.py`，共用样式在 `style.py`（与姊妹数据集论文一致：Arial 7 pt、180 mm 通栏、按毫米定位版面）。
 
 ## 状态
 
