@@ -14,4 +14,4 @@
 
 ## 状态
 
-论文尚未投稿，代码仓库为私有的 https://github.com/xiaoyanLi629/coffee-ring-crystallization-dataset 。数据集已上传 figshare（私有条目 34516434，预留 DOI 10.6084/m9.figshare.34516434，未发布；figshare 屏蔽 AutoDL 服务器，上传在东京 VPS 上用 analysis/figshare_upload.py 完成）。还缺代码发布版的 DOI。图像数据不入 git（见 .gitignore），只跟踪代码、表格、结果和稿件。
+论文尚未投稿，代码仓库为私有的 https://github.com/xiaoyanLi629/coffee-ring-crystallization-dataset 。数据集已上传 figshare（条目 34516434，DOI 10.6084/m9.figshare.34516434，2026-10-15 已公开发布 v1；figshare 屏蔽 AutoDL 服务器，上传在东京 VPS 上用 analysis/figshare_upload.py 完成）。还缺代码发布版的 DOI。图像数据不入 git（见 .gitignore），只跟踪代码、表格、结果和稿件。
