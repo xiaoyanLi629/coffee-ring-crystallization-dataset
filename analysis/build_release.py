@@ -22,7 +22,7 @@ ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
 SRC = ROOT + "/experiment/data"
 REL = ROOT + "/release"
 ZEN = ROOT + "/release_zenodo"
-REG = "/root/autodl-fs/CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns/data/derived/eds_registration.json"
+REG = "/root/autodl-fs/coffee-ring-water-chemistry/data/derived/eds_registration.json"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]
 RAW = ["sem.jpg", "sem.txt", "image.jpg"] + [f"{e}.jpeg" for e in EL]
 

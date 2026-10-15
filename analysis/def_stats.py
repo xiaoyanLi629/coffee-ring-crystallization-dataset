@@ -74,7 +74,7 @@ for j, p in enumerate(pn):
 res["D2_coloc_vs_salts_FE"] = {p: ols(df[f"coloc_{p}"], LS, fe=True) for p in ["Na-Cl", "Ca-S", "Ca-O", "O-S", "Mg-S", "Mg-O", "C-Ca", "C-O", "Na-S", "Cl-Mg"] if f"coloc_{p}" in df}
 
 # ---------------- D3 crystal-level evidence from the modelling project ----------------
-MP = "/root/autodl-fs/CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns/results"
+MP = "/root/autodl-fs/coffee-ring-water-chemistry/results"
 for name in ["crystal_unit_test.json", "crystal_phases_v2.json", "crystal_phases.json"]:
     p = os.path.join(MP, name)
     if os.path.exists(p):

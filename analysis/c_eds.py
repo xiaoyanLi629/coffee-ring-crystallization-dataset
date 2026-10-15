@@ -111,7 +111,7 @@ for e in EL:
 res["C4_background"] = c4
 
 # C5 Table 5 export sizes
-reg = json.load(open("/root/autodl-fs/CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns/data/derived/eds_registration.json"))
+reg = json.load(open("/root/autodl-fs/coffee-ring-water-chemistry/data/derived/eds_registration.json"))
 rg = pd.DataFrame([{"path": r["rep"], "reg_s": r["s"], "reg_ncc": r["ncc_registered"], "reg_fallback": r["fallback"]} for r in reg["droplets"]])
 t5 = df[df.table == 5].merge(rg, on="path")
 c5 = {}

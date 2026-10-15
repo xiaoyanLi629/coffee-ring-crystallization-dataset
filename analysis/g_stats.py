@@ -55,7 +55,7 @@ res["G0"] = {"optical_dates": gg.date_optical.value_counts().sort_index().to_dic
              "processed_dates": gg.date_processed.value_counts().to_dict()}
 
 # ---------------- G1 SEM-EDS registration (modelling project's registration, re-summarised)
-reg = json.load(open("/root/autodl-fs/CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns/data/derived/eds_registration.json"))
+reg = json.load(open("/root/autodl-fs/coffee-ring-water-chemistry/data/derived/eds_registration.json"))
 rd = pd.DataFrame(reg["droplets"])
 res["G1"] = {"n": int(len(rd)), "n_fallback": int(rd.fallback.sum()),
              "scale_quantiles": np.round(rd.s.quantile([.05, .5, .95]).values, 4).tolist(),

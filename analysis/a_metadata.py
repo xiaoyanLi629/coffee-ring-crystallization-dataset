@@ -11,7 +11,7 @@ from PIL import Image
 
 ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
 RAW = ROOT + "/experiment/data"
-SPLIT = "/root/autodl-fs/CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns/data/splits/cv5_seed2026.json"
+SPLIT = "/root/autodl-fs/coffee-ring-water-chemistry/data/splits/cv5_seed2026.json"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]
 MW = {"C": 12.011, "Ca": 40.078, "Cl": 35.45, "Mg": 24.305, "Na": 22.990, "O": 15.999, "S": 32.06}
 os.makedirs(ROOT + "/metadata", exist_ok=True)

@@ -2,7 +2,7 @@
 
 这是 Scientific Data 数据集论文 *SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions*（作者 Xiaoyan Li、Cuicui Jiang、Rebecca Lahr）的项目目录。数据集共 125 个化学配方，每个配方重复 5 次，合计 625 个样本；配方由 NaHCO₃（5 个水平，对应 Table_1 到 Table_5）与 CaCl₂、MgSO₄ 的 5×5 组合构成。每个样本包含一张 SEM 图（sem.jpg 及仪器参数 sem.txt）、一张手机光学照片（image.jpg）和七张 EDS 元素图（C、Ca、Cl、Mg、Na、O、S）。
 
-本目录于 2026-10-10 从建模项目 `CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns/dataset_paper/` 整体移出，内部结构保持原样，因此分析脚本里的相对路径不需要改。建模项目自己的 `data/` 保留了一份同样的原始数据（逐文件大小比对一致），两个项目各自独立，删改任何一边都不会影响另一边。
+本目录于 2026-10-10 从建模项目（原名 CNN-Vision-Transformer_Model_for_Elements_Concentration_Estimation_by_Coffee-Ring_Effect_Residue_Patterns，现为 `coffee-ring-water-chemistry`）的 `dataset_paper/` 整体移出，内部结构保持原样，因此分析脚本里的相对路径不需要改。建模项目自己的 `data/` 保留了一份同样的原始数据（逐文件大小比对一致），两个项目各自独立，删改任何一边都不会影响另一边。
 
 ## 目录说明
 
