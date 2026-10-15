@@ -9,7 +9,8 @@ release/
   splits.csv                     fold or group of every droplet under the benchmark protocols
   MD5SUMS                        checksum of every file above
 release_zenodo/
-  raw_Table_{1..5}.zip, tables.zip (metadata, derived, splits), README.md, MD5SUMS
+  raw_Table_{t}_Samples_{a}-{b}.zip (25 archives of five Samples each, ~100 MB, small enough to survive unstable uploads),
+  tables.zip (metadata, derived, splits), README.md, MD5SUMS, MD5SUMS_archives
 
 Raw files come from experiment/data/, excluding the derived *_processed.jpeg images. They are hard-linked when the file
 system allows it and copied otherwise; nothing in experiment/ is modified.
@@ -109,11 +110,17 @@ with open(REL + "/MD5SUMS", "w") as fo:
 
 # ---- Zenodo archives (JPEG is already compressed, so archives are stored without compression)
 os.makedirs(ZEN, exist_ok=True)
+for x in os.listdir(ZEN):
+    if x.startswith("raw_Table_") and x.endswith(".zip"):
+        os.remove(os.path.join(ZEN, x))
 for t in range(1, 6):
-    with zipfile.ZipFile(f"{ZEN}/raw_Table_{t}.zip", "w", zipfile.ZIP_STORED) as z:
-        for x in files:
-            if x.startswith(f"raw/Table_{t}/"):
-                z.write(os.path.join(REL, x), x)
+    for k in range(5):
+        lo, hi = 5 * k + 1, 5 * k + 5
+        want = tuple(f"raw/Table_{t}/Sample_{s}/" for s in range(lo, hi + 1))
+        with zipfile.ZipFile(f"{ZEN}/raw_Table_{t}_Samples_{lo:02d}-{hi:02d}.zip", "w", zipfile.ZIP_STORED) as z:
+            for x in files:
+                if x.startswith(want):
+                    z.write(os.path.join(REL, x), x)
 with zipfile.ZipFile(f"{ZEN}/tables.zip", "w", zipfile.ZIP_DEFLATED) as z:
     for x in files:
         if not x.startswith("raw/"):

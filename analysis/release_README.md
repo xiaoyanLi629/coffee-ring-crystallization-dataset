@@ -6,7 +6,7 @@ This record contains 625 dried droplet residues: five replicate 2 µL droplets o
 
 ## Files
 
-The five archives `raw_Table_1.zip` to `raw_Table_5.zip` hold the raw files of one NaHCO3 level each (125 droplets, 1,250 files per archive). `tables.zip` holds the metadata, the derived data and the benchmark splits. `MD5SUMS` lists the checksum of every file after extraction, and `MD5SUMS_archives` the checksums of the archives themselves.
+The 25 archives `raw_Table_{t}_Samples_{a}-{b}.zip` hold the raw files, one archive per NaHCO3 level (Table) and block of five Samples (25 droplets, 250 files, about 100 MB each); extracting all of them into one folder rebuilds the `raw/` tree. `tables.zip` holds the metadata, the derived data and the benchmark splits. `MD5SUMS` lists the checksum of every file after extraction, and `MD5SUMS_archives` the checksums of the archives themselves.
 
 After extraction the record has this layout:
 
