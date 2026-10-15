@@ -6,7 +6,7 @@
 
 ## 目录说明
 
-`data/` 是旧的“增强”工作副本（其中 8 个 sem.txt 被覆盖过），不入库，也不用于发布。对外发布的数据包由 `analysis/build_release.py` 从 `experiment/data/` 生成：`release/` 是解压后的目录结构（原始文件为硬链接，另有 metadata、derived、splits.csv 和 MD5SUMS），`release_zenodo/` 是上传 Zenodo 的五个 raw_Table_t.zip、tables.zip、README.md 和校验文件；数据包说明写在 `analysis/release_README.md`。两个目录都不入 git，随时可以重建。
+`data/` 是旧的“增强”工作副本（其中 8 个 sem.txt 被覆盖过），不入库，也不用于发布。对外发布的数据包由 `analysis/build_release.py` 从 `experiment/data/` 生成：`release/` 是解压后的目录结构（原始文件为硬链接，另有 metadata、derived、splits.csv 和 MD5SUMS），`release_zenodo/` 是上传用的 25 个 raw_Table_t_Samples_a-b.zip、tables.zip、README.md 和校验文件（目录名沿用旧称，实际发布在 figshare）；数据包说明写在 `analysis/release_README.md`。两个目录都不入 git，随时可以重建。
 
 `experiment/` 存原始数据：`experiment/data/` 是每个液滴的原始 SEM、EDS、光学图像和 sem.txt（另含 2021-08-31 生成的派生图 *_processed.jpeg），`recipies/` 是各元素浓度表与配方原始 xlsx。旧的统计、机器学习和图像校正脚本已于 2026-10-14 删除（在 git 历史里），`experiment/data_corrected/` 是旧校正脚本的输出，未入库。所有现行分析在 `analysis/`。
 
@@ -14,4 +14,4 @@
 
 ## 状态
 
-论文尚未投稿，代码仓库为私有的 https://github.com/xiaoyanLi629/coffee-ring-crystallization-dataset 。还缺数据集的 Zenodo DOI 和代码发布版的 DOI。图像数据不入 git（见 .gitignore），只跟踪代码、表格、结果和稿件。
+论文尚未投稿，代码仓库为私有的 https://github.com/xiaoyanLi629/coffee-ring-crystallization-dataset 。数据集已上传 figshare（私有条目 34516434，预留 DOI 10.6084/m9.figshare.34516434，未发布；figshare 屏蔽 AutoDL 服务器，上传在东京 VPS 上用 analysis/figshare_upload.py 完成）。还缺代码发布版的 DOI。图像数据不入 git（见 .gitignore），只跟踪代码、表格、结果和稿件。
