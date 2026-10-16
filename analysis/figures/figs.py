@@ -468,27 +468,38 @@ def fig8():
                      else cnn[(cnn.input == key) & (cnn.target == s) & (cnn.protocol == pc)].R2)
                 if len(v):
                     M[i, 2 * j + q] = v.iloc[0]
-    fig = figure(180, 74)
-    ax = axes_mm(fig, 44, 12, 60, 54)
-    cmap = LinearSegmentedColormap.from_list("r2", ["#F7FBFF", "#C6DBEF", "#6BAED6", "#2171B5", "#08306B"]); cmap.set_under("#EEEEEE")
-    ax.imshow(np.where(np.isnan(M), -9, np.clip(M, -9, 1)), cmap=cmap, vmin=0, vmax=1, aspect="auto")
-    for i in range(M.shape[0]):
-        for j in range(M.shape[1]):
-            if not np.isnan(M[i, j]):
-                ax.text(j, i, f"{M[i, j]:.2f}".replace("-", "−"), ha="center", va="center", fontsize=5.8,
-                        color="white" if M[i, j] > 0.62 else INK)
-    ax.set_yticks(range(len(rows))); ax.set_yticklabels([r[0] for r in rows])
-    ax.set_xticks(range(6)); ax.set_xticklabels(["recipe", "session"] * 3, fontsize=5.8)
-    ax.xaxis.tick_top()
-    for j, s in enumerate(salts):
-        ax.text(2 * j + 0.5, -1.25, SALT_TEX[s[:-3]], ha="center", va="bottom", fontsize=6.5, fontweight="bold")
-    for xx in (1.5, 3.5):
-        ax.axvline(xx, color="white", lw=2)
-    ax.axhline(3.5, color="white", lw=2)
-    for sp in ax.spines.values():
-        sp.set_visible(False)
-    ax.tick_params(length=0)
-    ax.text(-0.5, 8.0, "frozen features + ridge (rows 1–4), fine-tuned ResNet-18 (rows 5–8)", fontsize=5.5, color="#666666", va="top")
+    fig = figure(180, 80)
+    # a: R2 with recipes held out (open) and sessions held out (filled), one column per salt; the connecting line is the
+    # loss of performance when the acquisition session is new. Groups: frozen features + ridge, fine-tuned ResNet-18.
+    short = ["Detector label only", "EDS descriptors", "SEM features", "Optical features", "EDS", "EDS + SEM", "SEM", "Optical"]
+    ypos = np.array([0, 1, 2, 3, 4.9, 5.9, 6.9, 7.9])
+    for j, sname in enumerate(salts):
+        ax = axes_mm(fig, 31 + 25 * j, 12, 22, 54)
+        ax.axvspan(-0.25, 0, color="#F2F2F2", lw=0, zorder=0)
+        for i in range(len(rows)):
+            p1, p2 = M[i, 2 * j], M[i, 2 * j + 1]
+            ax.plot([p2, p1], [ypos[i]] * 2, color=SALT[sname[:-3]], lw=1.0, alpha=0.45, zorder=1, solid_capstyle="butt")
+            ax.scatter(p1, ypos[i], s=11, facecolor="white", edgecolor=SALT[sname[:-3]], lw=0.8, zorder=3)
+            ax.scatter(p2, ypos[i], s=11, color=SALT[sname[:-3]], ec="white", lw=0.3, zorder=4)
+        ax.axhline(3.55, color=LIGHT, lw=0.5)
+        ax.set_xlim(-0.25, 1.0); ax.set_xticks([0, 0.5, 1]); ax.set_xticklabels(["0", "0.5", "1"])
+        ax.set_ylim(8.5, -1.1)
+        ax.set_yticks(ypos); ax.set_yticklabels(short if j == 0 else [])
+        ax.tick_params(axis="y", length=0)
+        ax.spines["left"].set_visible(False)
+        ax.set_title(SALT_TEX[sname[:-3]], fontsize=6.5, fontweight="bold", pad=2)
+        if j == 1:
+            ax.set_xlabel("$R^2$")
+        if j == 0:
+            ax.text(-0.27, -0.75, "Frozen features + ridge", transform=ax.transData, ha="right", va="center", fontsize=6,
+                    style="italic", color="#555555")
+            ax.text(-0.27, 4.15, "Fine-tuned ResNet-18", transform=ax.transData, ha="right", va="center", fontsize=6,
+                    style="italic", color="#555555")
+        if j == 2:
+            hd = [mpl.lines.Line2D([], [], ls="", marker="o", mfc="white", mec=INK, mew=0.8, ms=3.2),
+                  mpl.lines.Line2D([], [], ls="", marker="o", color=INK, ms=3.2)]
+            ax.legend(hd, ["recipes held out", "sessions held out"], loc="upper left", bbox_to_anchor=(-1.45, -0.13), ncol=2,
+                      handletextpad=0.2, columnspacing=1.0)
     letter(fig, 1, 2, "a")
     ax = axes_mm(fig, 118, 12, 24, 48)
     keys = [("eds", "EDS"), ("eds_sem", "EDS + SEM"), ("sem", "SEM"), ("opt", "Optical")]
