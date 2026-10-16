@@ -72,7 +72,7 @@ def tidy_image(ax):
 # ------------------------------------------------------------------ Fig. 2 EDS response to the design
 def fig2():
     f = features()
-    fig = figure(180, 112)
+    fig = figure(180, 104)
     X = np.log2(f[["NaHCO3_mM", "CaCl2_mM", "MgSO4_mM"]].values)
     dose = [("Mg", "MgSO4_mM"), ("S", "MgSO4_mM"), ("O", "MgSO4_mM"), ("Cl", "CaCl2_mM"), ("Ca", "CaCl2_mM")]
     for k, (e, s) in enumerate(dose):
@@ -97,7 +97,7 @@ def fig2():
             ax.set_ylabel("Contrast-to-noise ratio, $d$")
         mm_letter(fig, ax, "abcde"[k], dx=-9 if k == 0 else -7)
     # f: co-localisation matrix
-    ax = axes_mm(fig, 12, 55, 44, 44)
+    ax = axes_mm(fig, 12, 50, 44, 44)
     M = np.full((7, 7), np.nan)
     for a, b in PAIRS:
         M[b, a] = f[f"x_{EL[a]}-{EL[b]}"].median()
@@ -114,25 +114,30 @@ def fig2():
         for j in range(i + 1):
             ax.text(j, i, f"{Mo[i, j]:.2f}".replace("-", "−"), ha="center", va="center", fontsize=5.5,
                     color="white" if abs(Mo[i, j]) > 0.3 else INK)
+    for i in range(6):
+        for j in range(i + 1):
+            ax.add_patch(Rectangle((j - 0.5, i - 0.5), 1, 1, fill=False, ec="white", lw=0.8))
     ax.set_xticks(range(6)); ax.set_xticklabels(order[:-1]); ax.set_yticks(range(6)); ax.set_yticklabels(order[1:])
     for s in ax.spines.values():
         s.set_visible(False)
     ax.tick_params(length=0)
-    cax = axes_mm(fig, 46, 57, 2, 20)
+    cax = axes_mm(fig, 47, 52, 1.8, 20)
     cb = fig.colorbar(im, cax=cax); cb.outline.set_linewidth(0.4); cb.ax.tick_params(labelsize=5.5, length=1.5)
     cb.set_label("Excess correlation", fontsize=6)
     mm_letter(fig, ax, "f")
     # g: Ca-S co-localisation against CaCl2 at each NaHCO3 level
-    ax = axes_mm(fig, 82, 55, 46, 44)
+    ax = axes_mm(fig, 82, 50, 46, 44)
     for t in range(1, 6):
         d = f[f.table == t].groupby("CaCl2_mM")["x_Ca-S"].agg(["mean", "sem"])
         ax.errorbar(d.index, d["mean"], d["sem"], fmt="o-", color=TABLE[t], ms=2.4, lw=0.9, capsize=0, elinewidth=0.6,
                     mec="white", mew=0.3, label=f"{LEVELS['NaHCO3_mM'][t - 1]:g}")
     logx(ax, "CaCl2_mM"); ax.set_xlabel(f"{SALT_TEX['CaCl2']} (mM)"); ax.set_ylabel("Ca–S excess correlation")
-    ax.legend(title=f"{SALT_TEX['NaHCO3']} (mM)", title_fontsize=6, loc="upper left", handlelength=1.4)
+    hd = [mpl.lines.Line2D([], [], color=TABLE[t], marker="o", ms=2.4, mec="white", mew=0.3, lw=0.9) for t in range(1, 6)]
+    ax.legend(hd, [f"{v:g}" for v in LEVELS["NaHCO3_mM"]], title=f"{SALT_TEX['NaHCO3']} (mM)", title_fontsize=6, loc="upper left",
+              handlelength=1.4, alignment="left")
     mm_letter(fig, ax, "g")
     # h: C-O co-localisation by NaHCO3 level: droplets (jittered) and median with interquartile range
-    ax = axes_mm(fig, 146, 55, 32, 44)
+    ax = axes_mm(fig, 146, 50, 32, 44)
     rng = np.random.default_rng(0)
     for i, v in enumerate(LEVELS["NaHCO3_mM"]):
         y = f[f.NaHCO3_mM == v]["x_C-O"].values
@@ -153,7 +158,7 @@ def fig3():
     names = list(PM["names"]); pi = {p: i for i, p in enumerate(PM["paths"])}
     ph = pd.read_csv(A + "/out_p/phase_droplet.csv"); ph = ph[ph.usable_eds]
     meta = pd.read_csv(ROOT + "/metadata/samples.csv")
-    fig = figure(180, 106)
+    fig = figure(180, 96)
     ex = ["Table_1/Sample_25/1_rep", "Table_2/Sample_13/2_rep", "Table_4/Sample_13/2_rep", "Table_5/Sample_25/1_rep"]
     for k, path in enumerate(ex):
         ax = axes_mm(fig, 4 + 36.5 * k, 6, 35, 26.25)
@@ -178,7 +183,7 @@ def fig3():
     f = features()
     R = np.load(A + "/out_def/radial.npz"); ri = {p: i for i, p in enumerate(R["paths"])}
     rs = np.stack([R["radial_shape"][ri[p]] for p in f.path])
-    ax = axes_mm(fig, 12, 46, 44, 50)
+    ax = axes_mm(fig, 12, 40, 44, 48)
     r = (np.arange(12) + 0.5) / 12
     ends = {}
     for e in ["S", "Ca", "Cl", "O", "Na", "C", "Mg"]:
@@ -200,7 +205,7 @@ def fig3():
     cf = {"gypsum": onset.Gypsum_onset_cf.median(), "Ca carbonate": onset.Calcite_onset_cf.median(),
           "Mg sulfate": onset[["Epsomite_onset_cf", "Kieserite_onset_cf", "Bloedite_onset_cf"]].min(1).median(),
           "halite": onset.Halite_onset_cf.median(), "chloride brine": np.nan, "Na/Mg carbonate": onset.Nesquehonite_onset_cf.median()}
-    ax = axes_mm(fig, 92, 46, 34, 50)
+    ax = axes_mm(fig, 92, 40, 34, 48)
     pos = np.arange(len(PHASES))[::-1]
     for y0, nm in zip(pos, PHASES):
         v = ph[f"r_{nm}"].dropna().values
@@ -209,13 +214,13 @@ def fig3():
         ax.add_patch(Rectangle((q[1], y0 - 0.28), q[3] - q[1], 0.56, fc=PHASE_COL[nm], ec=INK, lw=0.4))
         ax.plot([q[2], q[2]], [y0 - 0.28, y0 + 0.28], color=INK, lw=0.9)
     ax.set_yticks(pos)
-    ax.set_yticklabels([f"{nm}\n" + ("no onset" if np.isnan(cf[nm]) else f"CF {cf[nm]:,.0f}") for nm in PHASES], fontsize=6,
+    ax.set_yticklabels([f"{nm}\n" + ("no onset" if np.isnan(cf[nm]) else f"onset CF {cf[nm]:,.0f}") for nm in PHASES], fontsize=6,
                        linespacing=1.1)
     ax.set_ylim(-0.6, len(PHASES) - 0.4); ax.set_xlim(0.2, 1.0)
     ax.set_xlabel("Grain position (normalised radius)")
     mm_letter(fig, ax, "c", dx=-24)
     # d: gypsum area over the CaCl2-NaHCO3 plane
-    ax = axes_mm(fig, 136, 46, 30, 50)
+    ax = axes_mm(fig, 135, 40, 30, 48)
     grid = ph.groupby(["NaHCO3_mM", "CaCl2_mM"])["area_gypsum"].mean().unstack() * 100
     cm = LinearSegmentedColormap.from_list("gyp", ["#FFFFFF", "#F6C7A8", PHASE_COL["gypsum"], "#7A2B0C"])
     im = ax.imshow(grid.values, origin="lower", cmap=cm, aspect="auto")
@@ -229,9 +234,9 @@ def fig3():
     for s in ax.spines.values():
         s.set_visible(False)
     ax.tick_params(length=0)
-    cax = axes_mm(fig, 168, 46, 1.8, 50)
+    cax = axes_mm(fig, 167, 40, 1.8, 48)
     cb = fig.colorbar(im, cax=cax); cb.outline.set_linewidth(0.4); cb.ax.tick_params(labelsize=5.5, length=1.5)
-    cb.set_label("Gypsum grain area (%)", fontsize=6)
+    cb.set_label("Gypsum grain area (%)", fontsize=6, labelpad=3)
     mm_letter(fig, ax, "d")
     save(fig, FIG + "/fig3_spatial_phases")
 
@@ -243,7 +248,7 @@ def fig4():
     meta = pd.read_csv(ROOT + "/metadata/samples.csv").drop_duplicates(["table", "sample"])
     meta["recipe"] = "T" + meta.table.astype(str) + "_S" + meta["sample"].astype(str)
     tot = meta.set_index("recipe")[["Ca_mM", "Mg_mM", "Na_mM", "CaCl2_mM", "MgSO4_mM", "NaHCO3_mM"]]
-    fig = figure(180, 106)
+    fig = figure(180, 104)
     ax = axes_mm(fig, 12, 5, 84, 40)
     rec = "T3_S13"; d = paths[paths.recipe == rec]; t = tot.loc[rec]
     cf = 1 / d.mass_H2O.values; aw = 10 ** d.la_H2O.values
@@ -280,14 +285,15 @@ def fig4():
              ("MgSO4_solid_mmol", "area_Mg sulfate", "Predicted Mg sulfates (mmol kg$^{-1}$)", "Mg-sulfate grain area (%)"),
              ("Halite_mmol", "area_halite", "Predicted halite (mmol kg$^{-1}$)", "Halite grain area (%)")]
     for k, (p, o, xl, yl) in enumerate(tests):
-        ax = axes_mm(fig, 12 + 60 * k, 62, 44, 36)
+        ax = axes_mm(fig, 12 + 60 * k, 59, 44, 36)
         for tb in range(1, 6):
             dd = cmp_[cmp_.table == tb]
             ax.scatter(dd[p], dd[o], s=7, color=TABLE[tb], ec="white", lw=0.25, label=f"{LEVELS['NaHCO3_mM'][tb - 1]:g}", zorder=3)
         within = [stats.spearmanr(g_[p], g_[o]).correlation for _, g_ in cmp_.groupby("table")]
-        ax.text(0.03, 0.98, f"ρ = {stats.spearmanr(cmp_[p], cmp_[o]).correlation:.2f}\nρ within Table = {np.median(within):.2f}",
+        ax.text(0.03, 0.98, f"ρ = {stats.spearmanr(cmp_[p], cmp_[o]).correlation:.2f}\nρ within NaHCO$_3$ level = {np.median(within):.2f}",
                 transform=ax.transAxes, va="top", fontsize=5.8, color="#444444", linespacing=1.3)
         ax.set_xlabel(xl); ax.set_ylabel(yl)
+        lo, hi = ax.get_ylim(); ax.set_ylim(lo, hi + 0.22 * (hi - lo))
         if k == 2:
             ax.legend(title=f"{SALT_TEX['NaHCO3']} (mM)", title_fontsize=6, loc="upper right", handletextpad=0.1,
                       bbox_to_anchor=(1.02, 1.0))
@@ -349,7 +355,7 @@ def fig6():
     g = pd.read_csv(A + "/out_g/derived.csv")
     f = features(); g = g[g.path.isin(f.path)]
     G = json.load(open(A + "/out_g/summary.json"))["G3"]
-    fig = figure(180, 112)
+    fig = figure(180, 108)
     ax = axes_mm(fig, 12, 5, 40, 40)
     fam = [("EDS in-droplet chemistry", "#1F4E79", "EDS, in droplet"), ("EDS relative (rim ratio, d)", "#6BAED6", "EDS, relative"),
            ("EDS background (outside droplet)", "#BDBDBD", "EDS, background"),
@@ -375,7 +381,7 @@ def fig6():
     ax.tick_params(axis="y", length=0); ax.spines["left"].set_visible(False)
     ax.legend(ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.0), handlelength=0.9)
     mm_letter(fig, ax, "b", dx=-26, dy=-7)
-    ax = axes_mm(fig, 12, 64, 76, 38)
+    ax = axes_mm(fig, 12, 62, 76, 38)
     order = ["C", "O", "Na", "Mg", "S", "Cl", "Ca"]; Z = [6, 8, 11, 12, 16, 17, 20]
     for i, mode in enumerate(["BEC", "SEI"]):
         d = g[g.sem_signal == mode]
@@ -389,20 +395,20 @@ def fig6():
     ax.set_xlabel("Element and atomic number"); ax.set_ylabel("SEM grey–EDS excess correlation")
     ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2)
     mm_letter(fig, ax, "c", dy=-7)
-    ax = axes_mm(fig, 124, 64, 52, 38)
+    ax = axes_mm(fig, 124, 62, 52, 38)
     names = {"sem_z_in_mean": "Mean grey", "sem_z_in_sd": "Grey s.d.", "sem_hf_in": "Texture", "sem_hf_rim": "Rim texture",
              "sem_bright_frac": "Bright fraction", "sem_dark_frac": "Dark fraction", "sem_rim_width": "Rim width"}
     keys = list(names); yy = np.arange(len(keys))[::-1]
-    sets = [("BEC − SEI, fixed NaHCO$_3$", [G["mode_effect_T2T3"][k] for k in keys], "#7F7F7F", 0.24),
-            ("NaHCO$_3$, within BEC", [G["NaHCO3_within_mode_sessionFE"][k]["BEC"] for k in keys], DETECTOR["BEC"], 0.0),
-            ("NaHCO$_3$, within SEI", [G["NaHCO3_within_mode_sessionFE"][k]["SEI"] for k in keys], DETECTOR["SEI"], -0.24)]
+    sets = [("BEC − SEI", [G["mode_effect_T2T3"][k] for k in keys], "#7F7F7F", 0.24),
+            ("NaHCO$_3$ in BEC", [G["NaHCO3_within_mode_sessionFE"][k]["BEC"] for k in keys], DETECTOR["BEC"], 0.0),
+            ("NaHCO$_3$ in SEI", [G["NaHCO3_within_mode_sessionFE"][k]["SEI"] for k in keys], DETECTOR["SEI"], -0.24)]
     for lab, vals, c_, off in sets:
         b = np.array([v[0] for v in vals]); se = np.array([v[1] for v in vals])
         ax.errorbar(b, yy + off, xerr=1.96 * se, fmt="o", color=c_, ms=2.4, mec="white", mew=0.3, elinewidth=0.7, capsize=0, label=lab)
     ax.axvline(0, color=INK, lw=0.5); ax.set_yticks(yy); ax.set_yticklabels([names[k] for k in keys])
     ax.tick_params(axis="y", length=0)
     ax.set_xlabel("Standardised effect (95% CI)")
-    ax.legend(loc="lower center", bbox_to_anchor=(0.4, 1.0), ncol=2, columnspacing=0.7, handletextpad=0.1)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.42, 1.0), ncol=3, columnspacing=0.8, handletextpad=0.2, handlelength=1.0)
     mm_letter(fig, ax, "d", dx=-22, dy=-7)
     save(fig, FIG + "/fig6_acquisition")
 
@@ -419,7 +425,9 @@ def fig7():
     d = g[g.opt_w == 2592]; r = np.corrcoef(d.eds_diam_px_half, d.opt_diam_px)[0, 1]
     ax.text(0.04, 0.98, f"$r$ = {r:.2f}", transform=ax.transAxes, va="top", fontsize=6)
     ax.set_xlabel("EDS droplet diameter (px)"); ax.set_ylabel("Optical droplet diameter (px)")
-    ax.legend(loc="lower right", markerscale=2)
+    lg = ax.legend(loc="lower right", handletextpad=0.2)
+    for h in lg.legend_handles:
+        h.set_alpha(1); h.set_sizes([10])
     mm_letter(fig, ax, "a")
     ax = axes_mm(fig, 76, 4, 40, 36)
     eff_opt = GS["G5"]["salt_effects_optical_dateFE"]["opt_diam_mm_rel"]
@@ -507,7 +515,9 @@ def fig8():
         a_.set_major_locator(mpl.ticker.FixedLocator(tk)); a_.set_major_formatter(mpl.ticker.FixedFormatter([f"{v:g}" for v in tk]))
         a_.set_minor_locator(mpl.ticker.NullLocator())
     ax.set_xlabel("True (mM)"); ax.set_ylabel("Predicted, recipe mean (mM)")
-    ax.legend(loc="upper left", markerscale=2, handletextpad=0.1)
+    lg = ax.legend(loc="upper left", handletextpad=0.1)
+    for h in lg.legend_handles:
+        h.set_alpha(1); h.set_sizes([10])
     letter(fig, 144, 2, "c")
     save(fig, FIG + "/fig8_benchmarks")
 
