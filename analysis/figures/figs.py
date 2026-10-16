@@ -22,6 +22,7 @@ PAIRS = list(itertools.combinations(range(7), 2))
 LEVELS = {"NaHCO3_mM": [0.25, 0.5, 0.75, 1.0, 2.0], "CaCl2_mM": [0.5, 0.75, 1.0, 1.5, 2.0], "MgSO4_mM": [0.25, 0.5, 0.75, 1.0, 2.0]}
 PHASE_COL = {"gypsum": "#D9622B", "Ca carbonate": "#4BA3D9", "Mg sulfate": "#B655BE", "halite": "#F2B134",
              "chloride brine": "#7FBF7B", "Na/Mg carbonate": "#A6A6A6"}
+GRID_MGSO4 = 0.75
 PHASES = ["gypsum", "Ca carbonate", "Mg sulfate", "halite", "chloride brine", "Na/Mg carbonate"]
 
 
@@ -158,32 +159,54 @@ def fig3():
     names = list(PM["names"]); pi = {p: i for i, p in enumerate(PM["paths"])}
     ph = pd.read_csv(A + "/out_p/phase_droplet.csv"); ph = ph[ph.usable_eds]
     meta = pd.read_csv(ROOT + "/metadata/samples.csv")
-    fig = figure(180, 96)
-    ex = ["Table_1/Sample_25/1_rep", "Table_2/Sample_13/2_rep", "Table_4/Sample_13/2_rep", "Table_5/Sample_25/1_rep"]
-    for k, path in enumerate(ex):
-        ax = axes_mm(fig, 4 + 36.5 * k, 6, 35, 26.25)
-        row = meta[meta.path == path].iloc[0]
-        sem = cv2.resize(cv2.imread(f"{ROOT}/experiment/data/{path}/sem.jpg", 0), (505, 379), interpolation=cv2.INTER_AREA).astype(np.float32)
-        sem = (sem - np.percentile(sem, 1)) / (np.percentile(sem, 99) - np.percentile(sem, 1))
-        rgb = np.repeat(np.clip(sem, 0, 1)[..., None] * 0.5 + 0.05, 3, -1)
-        lab = PM["labels"][pi[path]]
-        for j, nm in enumerate(names):
-            rgb[lab == j] = mpl.colors.to_rgb(PHASE_COL[nm])
-        ax.imshow(rgb, interpolation="nearest"); tidy_image(ax)
-        ax.set_title(f"T{row.table} S{row['sample']} R{row.replicate}   {row.NaHCO3_mM:g} · {row.CaCl2_mM:g} · {row.MgSO4_mM:g}",
-                     fontsize=6)
-        if k == 0:
-            mm_letter(fig, ax, "a", dx=-4, dy=-4)
-    ax = axes_mm(fig, 150, 7, 28, 25); ax.axis("off"); ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+    fig = figure(180, 207)
+    # a: grain phase maps over the NaHCO3 x CaCl2 plane at one MgSO4 level; one replicate per water (usable EDS, no quality
+    # flag, best SEM-EDS registration), square crop centred on the droplet (side = 1.15 droplet diameters)
+    reg = pd.read_csv(ROOT + "/release/derived/registration.csv").set_index("droplet_id")
+    MK = np.load(ROOT + "/derived/masks_eds.npz"); masks = dict(zip(MK["paths"], MK["masks"]))
+    cand = meta[(meta.MgSO4_mM == GRID_MGSO4) & meta.usable_eds & meta.path.isin(pi)].join(reg[["ncc_registered"]], on="droplet_id")
+    cand = cand.sort_values(["n_flags", "ncc_registered"], ascending=[True, False])
+    T, G, X0, Y0 = 24.6, 0.7, 17.0, 12.0
+    nah, cac = LEVELS["NaHCO3_mM"][::-1], LEVELS["CaCl2_mM"]
+    for i, vn in enumerate(nah):
+        for j, vc in enumerate(cac):
+            row = cand[(cand.NaHCO3_mM == vn) & (cand.CaCl2_mM == vc)].iloc[0]
+            path = row.path
+            sem = cv2.resize(cv2.imread(f"{ROOT}/experiment/data/{path}/sem.jpg", 0), (505, 379), interpolation=cv2.INTER_AREA).astype(np.float32)
+            sem = (sem - np.percentile(sem, 1)) / (np.percentile(sem, 99) - np.percentile(sem, 1))
+            rgb = np.repeat(np.clip(sem, 0, 1)[..., None] * 0.5 + 0.05, 3, -1)
+            lab = PM["labels"][pi[path]]
+            for k, nm in enumerate(names):
+                rgb[lab == k] = mpl.colors.to_rgb(PHASE_COL[nm])
+            m = masks[path]; ys, xs = np.nonzero(m)
+            cx, cy, h = xs.mean(), ys.mean(), int(round(1.15 * np.sqrt(m.sum() / np.pi)))
+            pad = np.pad(rgb, ((h, h), (h, h), (0, 0)), mode="reflect")
+            cy_, cx_ = int(round(cy)) + h, int(round(cx)) + h
+            tile = cv2.resize(pad[cy_ - h:cy_ + h, cx_ - h:cx_ + h], (320, 320), interpolation=cv2.INTER_NEAREST)
+            ax = axes_mm(fig, X0 + j * (T + G), Y0 + i * (T + G), T, T)
+            ax.imshow(tile, interpolation="nearest"); tidy_image(ax)
+            ax.text(0.03, 0.04, f"T{row.table} S{row['sample']} R{row.replicate}", transform=ax.transAxes, fontsize=4.8,
+                    color="white", va="bottom", ha="left", bbox=dict(fc="black", ec="none", alpha=0.45, pad=0.5))
+            if i == 0:
+                ax.text(0.5, 1.04, f"{vc:g}", transform=ax.transAxes, ha="center", va="bottom", fontsize=6)
+            if j == 0:
+                ax.text(-0.05, 0.5, f"{vn:g}", transform=ax.transAxes, ha="right", va="center", fontsize=6)
+            if i == 0 and j == 0:
+                mm_letter(fig, ax, "a", dx=-16, dy=-8)
+    W5 = 5 * T + 4 * G
+    fig.text((X0 + W5 / 2) / 180, 1 - 3.0 / 207, f"{SALT_TEX['CaCl2']} (mM)", ha="center", va="top", fontsize=7)
+    fig.text(4.5 / 180, 1 - (Y0 + W5 / 2) / 207, f"{SALT_TEX['NaHCO3']} (mM)", ha="center", va="center", rotation=90, fontsize=7)
+    ax = axes_mm(fig, X0 + W5 + 4, Y0, 30, 34); ax.axis("off"); ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+    ax.text(0.0, 1.0, f"{SALT_TEX['MgSO4']} {GRID_MGSO4:g} mM", fontsize=6, va="top", fontweight="bold")
     for j, nm in enumerate(PHASES):
-        y = 0.92 - j * 0.165
-        ax.add_patch(Rectangle((0.0, y - 0.05), 0.12, 0.10, color=PHASE_COL[nm]))
+        y = 0.80 - j * 0.14
+        ax.add_patch(Rectangle((0.0, y - 0.045), 0.12, 0.09, color=PHASE_COL[nm]))
         ax.text(0.18, y, nm, va="center", fontsize=6)
     # b: radial profiles, labelled at the rim
     f = features()
     R = np.load(A + "/out_def/radial.npz"); ri = {p: i for i, p in enumerate(R["paths"])}
     rs = np.stack([R["radial_shape"][ri[p]] for p in f.path])
-    ax = axes_mm(fig, 12, 40, 44, 48)
+    ax = axes_mm(fig, 12, 147, 44, 48)
     r = (np.arange(12) + 0.5) / 12
     ends = {}
     for e in ["S", "Ca", "Cl", "O", "Na", "C", "Mg"]:
@@ -205,7 +228,7 @@ def fig3():
     cf = {"gypsum": onset.Gypsum_onset_cf.median(), "Ca carbonate": onset.Calcite_onset_cf.median(),
           "Mg sulfate": onset[["Epsomite_onset_cf", "Kieserite_onset_cf", "Bloedite_onset_cf"]].min(1).median(),
           "halite": onset.Halite_onset_cf.median(), "chloride brine": np.nan, "Na/Mg carbonate": onset.Nesquehonite_onset_cf.median()}
-    ax = axes_mm(fig, 92, 40, 34, 48)
+    ax = axes_mm(fig, 92, 147, 34, 48)
     pos = np.arange(len(PHASES))[::-1]
     for y0, nm in zip(pos, PHASES):
         v = ph[f"r_{nm}"].dropna().values
@@ -220,7 +243,7 @@ def fig3():
     ax.set_xlabel("Grain position (normalised radius)")
     mm_letter(fig, ax, "c", dx=-24)
     # d: gypsum area over the CaCl2-NaHCO3 plane
-    ax = axes_mm(fig, 135, 40, 30, 48)
+    ax = axes_mm(fig, 135, 147, 30, 48)
     grid = ph.groupby(["NaHCO3_mM", "CaCl2_mM"])["area_gypsum"].mean().unstack() * 100
     cm = LinearSegmentedColormap.from_list("gyp", ["#FFFFFF", "#F6C7A8", PHASE_COL["gypsum"], "#7A2B0C"])
     im = ax.imshow(grid.values, origin="lower", cmap=cm, aspect="auto")
@@ -234,7 +257,7 @@ def fig3():
     for s in ax.spines.values():
         s.set_visible(False)
     ax.tick_params(length=0)
-    cax = axes_mm(fig, 167, 40, 1.8, 48)
+    cax = axes_mm(fig, 167, 147, 1.8, 48)
     cb = fig.colorbar(im, cax=cax); cb.outline.set_linewidth(0.4); cb.ax.tick_params(labelsize=5.5, length=1.5)
     cb.set_label("Gypsum grain area (%)", fontsize=6, labelpad=3)
     mm_letter(fig, ax, "d")
@@ -249,35 +272,62 @@ def fig4():
     meta["recipe"] = "T" + meta.table.astype(str) + "_S" + meta["sample"].astype(str)
     tot = meta.set_index("recipe")[["Ca_mM", "Mg_mM", "Na_mM", "CaCl2_mM", "MgSO4_mM", "NaHCO3_mM"]]
     fig = figure(180, 104)
-    ax = axes_mm(fig, 12, 5, 84, 40)
-    rec = "T3_S13"; d = paths[paths.recipe == rec]; t = tot.loc[rec]
-    cf = 1 / d.mass_H2O.values; aw = 10 ** d.la_H2O.values
-    col = lambda m: d[m].values if m in d else np.zeros(len(d))
-    curves = [("calcite (Ca)", col("Calcite") / (t.Ca_mM / 1e3), PHASE_COL["Ca carbonate"]),
-              ("gypsum (Ca)", col("Gypsum") / (t.Ca_mM / 1e3), PHASE_COL["gypsum"]),
-              ("Mg sulfates (Mg)", (col("Epsomite") + col("Hexahydrite") + col("Kieserite") + col("Bloedite")) / (t.Mg_mM / 1e3), PHASE_COL["Mg sulfate"]),
-              ("nesquehonite (Mg)", col("Nesquehonite") / (t.Mg_mM / 1e3), PHASE_COL["Na/Mg carbonate"]),
-              ("halite (Na)", col("Halite") / (t.Na_mM / 1e3), PHASE_COL["halite"])]
-    for lab, y, c_ in curves:
-        ax.plot(cf, np.clip(y, 0, 1.05), color=c_, lw=1.1, label=lab)
-    i_dry = np.nonzero(aw >= 0.475)[0][-1]
-    ax.axvspan(cf[i_dry], cf.max() * 1.3, color="#F0F0F0", lw=0, zorder=0)
-    ax.text(cf[i_dry] * 1.12, 0.5, "beyond the\ndrying endpoint", fontsize=6, color="#666666", va="center")
-    ax.set_xscale("log"); ax.set_xlim(1, cf.max() * 1.3); ax.set_ylim(-0.02, 1.05)
-    ax.set_xlabel("Concentration factor"); ax.set_ylabel("Fraction precipitated")
-    ax.legend(loc="upper left")
-    mm_letter(fig, ax, "a")
-    ax = axes_mm(fig, 124, 9, 52, 36)
-    sub = cmp_[(cmp_.CaCl2_mM == 1.0) & (cmp_.MgSO4_mM == 0.75)].sort_values("NaHCO3_mM")
-    x = np.arange(len(sub))
-    cal, gyp = sub.f_Ca_calcite.clip(0, 1).values, sub.f_Ca_gypsum.clip(0, 1).values
-    ax.bar(x, cal, 0.62, color=PHASE_COL["Ca carbonate"], label="calcite")
-    ax.bar(x, gyp, 0.62, bottom=cal, color=PHASE_COL["gypsum"], label="gypsum")
-    ax.bar(x, np.clip(1 - cal - gyp, 0, 1), 0.62, bottom=cal + gyp, color="#E3E3E3", label="in brine")
-    ax.set_xticks(x); ax.set_xticklabels([f"{v:g}" for v in sub.NaHCO3_mM]); ax.set_xlabel(f"{SALT_TEX['NaHCO3']} (mM)")
-    ax.set_ylabel("Fraction of Ca"); ax.set_ylim(0, 1)
-    ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=3, handlelength=0.9)
-    mm_letter(fig, ax, "b", dy=-7)
+    # a: predicted precipitation sequence for all 125 waters: onset concentration factor of each mineral (one point per
+    # water, coloured by NaHCO3), against the concentration factor at which the brine reaches the drying humidity
+    on = pd.read_csv(A + "/out_t/onset.csv")
+    on["table"] = on.recipe.str[1].astype(int)
+    on["Mgsulf_onset_cf"] = on[["Epsomite_onset_cf", "Hexahydrite_onset_cf", "Kieserite_onset_cf", "Bloedite_onset_cf"]].min(1)
+    seq = [("Calcite_onset_cf", "calcite", PHASE_COL["Ca carbonate"]), ("Gypsum_onset_cf", "gypsum", PHASE_COL["gypsum"]),
+           ("Halite_onset_cf", "halite", PHASE_COL["halite"]), ("Mgsulf_onset_cf", "Mg sulfates", PHASE_COL["Mg sulfate"]),
+           ("Nesquehonite_onset_cf", "nesquehonite", PHASE_COL["Na/Mg carbonate"]), ("Bischofite_onset_cf", "bischofite", "#7FBF7B")]
+    ax = axes_mm(fig, 24, 7, 80, 40)
+    end = on.cf_at_aw0475.where(on.cf_at_aw0475 > 0, on.path_end_cf)
+    lo, md, hi = np.percentile(end, [5, 50, 95])
+    ax.axvspan(lo, 1e5, color="#EFEFEF", lw=0, zorder=0)
+    ax.axvline(md, color=GREY, lw=0.6, ls=(0, (2, 2)), zorder=1)
+    ax.text(md * 1.15, -0.85, "drying\nendpoint", fontsize=5.5, color="#666666", va="center", ha="left", linespacing=1.0)
+    rng = np.random.default_rng(3)
+    for k, (col, lab, c_) in enumerate(seq):
+        v = on[[col, "table", "cf_at_aw0475"]].dropna(subset=[col])
+        y = k + rng.uniform(-0.22, 0.22, len(v))
+        ax.scatter(v[col], y, s=4, c=[TABLE[t] for t in v.table], lw=0, alpha=0.9, zorder=3)
+        if len(v):
+            ax.plot([np.median(v[col])] * 2, [k - 0.32, k + 0.32], color=c_, lw=1.6, zorder=4, solid_capstyle="butt")
+        n_dry = int((v[col] <= v.cf_at_aw0475.fillna(np.inf)).sum())
+        ax.text(1.02, k, f"{n_dry}", transform=ax.get_yaxis_transform(), fontsize=5.5, va="center", ha="left", color="#444444")
+    ax.text(1.02, -0.85, "waters\nbefore\nendpoint", transform=ax.get_yaxis_transform(), fontsize=5, va="center", ha="left",
+            color="#666666", linespacing=1.0)
+    ax.set_xscale("log"); ax.set_xlim(0.8, 6e4); ax.set_ylim(len(seq) - 0.5, -1.6)
+    ax.set_yticks(range(len(seq))); ax.set_yticklabels([x[1] for x in seq]); ax.tick_params(axis="y", length=0)
+    for t_, c_ in [(k, seq[k][2]) for k in range(len(seq))]:
+        ax.get_yticklabels()[t_].set_color(c_)
+    ax.spines["left"].set_visible(False)
+    ax.set_xlabel("Concentration factor at onset of precipitation")
+    hd = [mpl.lines.Line2D([], [], ls="", marker="o", color=TABLE[t], ms=2.6) for t in range(1, 6)]
+    ax.legend(hd, [f"{v:g}" for v in LEVELS["NaHCO3_mM"]], title=f"{SALT_TEX['NaHCO3']} (mM)", title_fontsize=5.5, fontsize=5.5,
+              loc="upper left", bbox_to_anchor=(0.12, 1.04), ncol=5, columnspacing=0.6, handletextpad=0.05,
+              alignment="left")
+    mm_letter(fig, ax, "a", dx=-22)
+    # b: predicted gypsum over the CaCl2-NaHCO3 plane (mean over MgSO4), laid out as the observed map of Fig. 3d
+    ax = axes_mm(fig, 132, 7, 32, 40)
+    grid = cmp_.groupby(["NaHCO3_mM", "CaCl2_mM"])["Gypsum_mmol"].mean().unstack()
+    cm = LinearSegmentedColormap.from_list("gyp", ["#FFFFFF", "#F6C7A8", PHASE_COL["gypsum"], "#7A2B0C"])
+    im = ax.imshow(grid.values, origin="lower", cmap=cm, aspect="auto", vmin=0)
+    ax.set_xticks(range(5)); ax.set_xticklabels([f"{v:g}" for v in grid.columns])
+    ax.set_yticks(range(5)); ax.set_yticklabels([f"{v:g}" for v in grid.index])
+    ax.set_xlabel(f"{SALT_TEX['CaCl2']} (mM)"); ax.set_ylabel(f"{SALT_TEX['NaHCO3']} (mM)")
+    vmax = np.nanmax(grid.values)
+    for i in range(5):
+        for j in range(5):
+            v = grid.values[i, j]
+            ax.text(j, i, f"{v:.2f}", ha="center", va="center", fontsize=5.3, color="white" if v > 0.55 * vmax else INK)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    ax.tick_params(length=0)
+    cax = axes_mm(fig, 166, 7, 1.8, 40)
+    cb = fig.colorbar(im, cax=cax); cb.outline.set_linewidth(0.4); cb.ax.tick_params(labelsize=5.5, length=1.5)
+    cb.set_label("Predicted gypsum (mmol kg$^{-1}$)", fontsize=6, labelpad=3)
+    mm_letter(fig, ax, "b", dx=-14)
     ph = pd.read_csv(A + "/out_p/phase_droplet.csv"); ph = ph[ph.usable_eds]
     ph["recipe"] = "T" + ph.table.astype(str) + "_S" + ph["sample"].astype(str)
     cmp_ = cmp_.join(ph.groupby("recipe")[["area_gypsum", "area_Mg sulfate", "area_halite"]].mean() * 100, how="inner")
