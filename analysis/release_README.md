@@ -77,8 +77,8 @@ Across the design, hardness ranges from 100 to 425 mg/L as CaCO₃ and total dis
 |---|---|
 | Substrate | 6061 aluminium, mirror-like (#8) finish, 1 × 3 inch slides, ten droplets per slide |
 | Deposition | 2 µL droplets from a programmable four-axis autosampler; drying took about 20 min in a chamber at 23–26 °C and 45–50 % RH |
-| Optical | Celestron Digital Microscope Pro (5 MP) at 100×; photographs taken July–August 2021 |
-| SEM | JEOL JSM-6610LV, high vacuum, 15 kV (10 kV for two droplets), 10 mm working distance, 40–55× magnification; twelve sessions, 14–28 August 2021 |
+| Optical | Celestron Digital Microscope Pro (5 MP) at 100×; photographs taken July–August 2021; about 1.41 µm per pixel at 2592 × 1944 px and 2.69 µm at 1280 × 1024 px, from the droplet diameter relative to SEM |
+| SEM | JEOL JSM-6610LV, high vacuum, 15 kV (10 kV for two droplets), 10 mm working distance, 40–55× magnification; nominal pixel size 50 / magnification µm (1.00 µm at 50×), column `sem_px_um`; twelve sessions, 14–28 August 2021 |
 | EDS | Oxford Instruments system on the same microscope; seven elemental maps per droplet, exported as contrast-stretched JPEG |
 
 Samples were not coated before electron microscopy. Full methods are given in the accompanying Data Descriptor.
@@ -159,7 +159,7 @@ Every droplet has the identifier **`T{t}_S{s}_R{r}`** (for example `T2_S13_R1`).
 
 | File | Rows | Description |
 |---|---|---|
-| `metadata/samples.csv` | 625 | Design factors; salt and element concentrations; molar and mass fractions; hardness, ionic strength and TDS; SEM parameters parsed from `sem.txt` (detector `sem_signal`, voltage, magnification, working distance, spot size, date, stage position); image sizes; SEM `session`; recommended fold `cv_test_fold`; `n_flags`, `usable_sem` and `usable_eds` |
+| `metadata/samples.csv` | 625 | Design factors; salt and element concentrations; molar and mass fractions; hardness, ionic strength and TDS; SEM parameters parsed from `sem.txt` (detector `sem_signal`, voltage, magnification, working distance, spot size, date, stage position) and the nominal SEM pixel size `sem_px_um`; image sizes; SEM `session`; recommended fold `cv_test_fold`; `n_flags`, `usable_sem` and `usable_eds` |
 | `metadata/quality_flags.csv` | 80 | `droplet_id`, `flag` and `note`, covering, for example, low-resolution optical images, mixed EDS map sizes, duplicated images and the two 10 kV acquisitions |
 | `metadata/recipes.csv` | 125 | Concentrations, hardness, ionic strength and TDS for each recipe `T{t}_S{s}` |
 | `derived/masks_eds.npz` | 625 | Arrays `droplet_id`, `masks` (625 × 379 × 505, boolean) and `grid` |
@@ -181,7 +181,6 @@ Six droplets (T1_S1_R4, T1_S1_R5, T1_S3_R5, T1_S4_R1, T1_S21_R5 and T3_S8_R2) ha
 
 - **EDS maps are contrast-stretched individually.** Grey levels cannot be compared between maps or between droplets. Use the substrate-referenced descriptors in `derived/eds_features.csv`. The original spectra and count maps were not retained.
 - **The Mg map includes a substrate signal.** The Al Kα line of the aluminium substrate lies close to Mg Kα, so at low MgSO₄ the Mg map is dominated by the substrate.
-- **No physical pixel size.** `sem.txt` does not record the scale-bar length. A relative scale (50 / magnification) is given in `sem_px_rel`.
 - **Optical images carry no capture metadata.** Photograph dates come from the file system and are listed in `derived/optical.csv`.
 - **Quality flags.** Two droplets are unusable for SEM and two for EDS (see `usable_sem` and `usable_eds`). All 80 flags are explained in `metadata/quality_flags.csv`.
 

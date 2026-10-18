@@ -63,10 +63,10 @@ df["ionic_strength_mM"] = 0.5 * (df.Na_mM * 1 + df.Ca_mM * 4 + df.Mg_mM * 4 + df
                                  + df.S_mM * 4 + df.C_mM * 1)  # HCO3- as monovalent, SO4 2-
 df["tds_mg_L"] = (df.NaHCO3_mM * 84.007 + df.CaCl2_mM * 110.98 + df.MgSO4_mM * 120.37 + df.MgCl2_mM * 95.21)
 
-# acquisition: datetime, session (calendar day), relative pixel size
+# acquisition: datetime, session (calendar day), nominal pixel size
 df["sem_datetime"] = pd.to_datetime(df.sem_date + " " + df.sem_time)
 df["session"] = df.sem_date
-df["sem_px_rel"] = 50.0 / df.sem_mag  # pixel size relative to a 50x image (absolute scale needs the instrument's field width)
+df["sem_px_um"] = 50.0 / df.sem_mag  # nominal µm per pixel: JSM-6610LV magnification refers to a 128 mm wide image, here 2560 px
 df["eds_export"] = df.eds_Ca_w.astype(str) + "x" + df.eds_Ca_h.astype(str)
 
 # CV folds (recipe-grouped)
