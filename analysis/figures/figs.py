@@ -326,14 +326,14 @@ def fig4():
     ax.tick_params(length=0)
     cax = axes_mm(fig, 166, 7, 1.8, 40)
     cb = fig.colorbar(im, cax=cax); cb.outline.set_linewidth(0.4); cb.ax.tick_params(labelsize=5.5, length=1.5)
-    cb.set_label("Predicted gypsum (mmol kg$^{-1}$)", fontsize=6, labelpad=3)
+    cb.set_label("Predicted gypsum (mmol kg⁻¹)", fontsize=6, labelpad=3)
     mm_letter(fig, ax, "b", dx=-14)
     ph = pd.read_csv(A + "/out_p/phase_droplet.csv"); ph = ph[ph.usable_eds]
     ph["recipe"] = "T" + ph.table.astype(str) + "_S" + ph["sample"].astype(str)
     cmp_ = cmp_.join(ph.groupby("recipe")[["area_gypsum", "area_Mg sulfate", "area_halite"]].mean() * 100, how="inner")
-    tests = [("Gypsum_mmol", "area_gypsum", "Predicted gypsum (mmol kg$^{-1}$)", "Gypsum grain area (%)"),
-             ("MgSO4_solid_mmol", "area_Mg sulfate", "Predicted Mg sulfates (mmol kg$^{-1}$)", "Mg-sulfate grain area (%)"),
-             ("Halite_mmol", "area_halite", "Predicted halite (mmol kg$^{-1}$)", "Halite grain area (%)")]
+    tests = [("Gypsum_mmol", "area_gypsum", "Predicted gypsum (mmol kg⁻¹)", "Gypsum grain area (%)"),
+             ("MgSO4_solid_mmol", "area_Mg sulfate", "Predicted Mg sulfates (mmol kg⁻¹)", "Mg-sulfate grain area (%)"),
+             ("Halite_mmol", "area_halite", "Predicted halite (mmol kg⁻¹)", "Halite grain area (%)")]
     for k, (p, o, xl, yl) in enumerate(tests):
         ax = axes_mm(fig, 12 + 60 * k, 59, 44, 36)
         for tb in range(1, 6):
@@ -386,14 +386,22 @@ def fig5():
     ax.legend(h[::-1], l[::-1], title=f"{SALT_TEX['MgSO4']} (mM)", title_fontsize=6, loc="upper left", bbox_to_anchor=(1.0, 1.02))
     mm_letter(fig, ax, "b")
     ax = axes_mm(fig, 138, 4, 40, 38)
+    # only Mg and Na leave zero; the other four elements are summarised in one line instead of four overlapping flat lines
+    rest = 0
     for e in ["Mg", "Na", "S", "Ca", "Cl", "O"]:
         kk = EL.index(e)
         rim = np.nanmean(rad[:, kk, -2:], 1)
         fr = [(rim[f.MgSO4_mM.values == l] < 0).mean() * 100 for l in LEVELS["MgSO4_mM"]]
-        ax.plot(LEVELS["MgSO4_mM"], fr, "o-", color=ELEMENT[e], ms=2.2, mec="white", mew=0.3, lw=1.1 if e == "Mg" else 0.7,
-                label=e, zorder=3 if e == "Mg" else 2)
+        if e in ("Mg", "Na"):
+            ax.plot(LEVELS["MgSO4_mM"], fr, "o-", color=ELEMENT[e], ms=2.6, mec="white", mew=0.3, lw=1.1, zorder=3)
+            ax.annotate(e, (LEVELS["MgSO4_mM"][0], fr[0]), xytext=(4, 2 if e == "Mg" else 4), textcoords="offset points",
+                        fontsize=6, color=ELEMENT[e], fontweight="bold")
+        else:
+            rest = max(rest, max(fr))
+    ax.text(0.97, 0.5, f"Ca, Cl, O, S\n≤ {np.ceil(rest):.0f}% at every level", transform=ax.transAxes, ha="right", fontsize=5.5,
+            color=GREY)
     logx(ax, "MgSO4_mM"); ax.set_xlabel(f"{SALT_TEX['MgSO4']} (mM)"); ax.set_ylabel("Rim below substrate (% of droplets)")
-    ax.legend(ncol=2, loc="upper right")
+    ax.set_ylim(-2, None)
     mm_letter(fig, ax, "c")
     save(fig, FIG + "/fig5_eds_limitations")
 
@@ -405,7 +413,7 @@ def fig6():
     g = pd.read_csv(A + "/out_g/derived.csv")
     f = features(); g = g[g.path.isin(f.path)]
     G = json.load(open(A + "/out_g/summary.json"))["G3"]
-    fig = figure(180, 108)
+    fig = figure(180, 112)
     ax = axes_mm(fig, 12, 5, 40, 40)
     fam = [("EDS in-droplet chemistry", "#1F4E79", "EDS, in droplet"), ("EDS relative (rim ratio, d)", "#6BAED6", "EDS, relative"),
            ("EDS background (outside droplet)", "#BDBDBD", "EDS, background"),
@@ -438,7 +446,7 @@ def fig6():
         v = [d[f"semr_{e}"].sub(d[f"semr_{e}_ctrl"]) for e in order]
         med = [x.median() for x in v]; q = [x.quantile([.25, .75]).values for x in v]
         xs = np.arange(7) + (i - 0.5) * 0.34
-        ax.bar(xs, med, 0.32, color=DETECTOR[mode], label=f"{mode}, median $R^2$ = {d.sem_on_eds_R2.median():.2f}")
+        ax.bar(xs, med, 0.32, color=DETECTOR[mode], label=f"{mode}, median R² = {d.sem_on_eds_R2.median():.2f}")
         ax.vlines(xs, [a for a, b in q], [b for a, b in q], color=INK, lw=0.5)
     ax.axhline(0, color=INK, lw=0.5)
     ax.set_xticks(range(7)); ax.set_xticklabels([f"{e}\n{z}" for e, z in zip(order, Z)], linespacing=1.1)
@@ -539,7 +547,7 @@ def fig8():
         ax.spines["left"].set_visible(False)
         ax.set_title(SALT_TEX[sname[:-3]], fontsize=6.5, fontweight="bold", pad=2)
         if j == 1:
-            ax.set_xlabel("$R^2$")
+            ax.set_xlabel("R²")
         if j == 0:
             ax.text(-0.27, -0.75, "Frozen features + ridge", transform=ax.transData, ha="right", va="center", fontsize=6,
                     style="italic", color="#555555")
@@ -559,7 +567,7 @@ def fig8():
         ax.barh(ys, np.clip(v, -1, 1), 0.34, color=SALT[s[:-3]], label=SALT_TEX[s[:-3]])
     ax.axvline(0, color=INK, lw=0.5); ax.set_xlim(-1, 1)
     ax.set_yticks(range(len(keys))); ax.set_yticklabels([k[1] for k in keys]); ax.invert_yaxis(); ax.tick_params(axis="y", length=0)
-    ax.set_xlabel("Cross-detector $R^2$")
+    ax.set_xlabel("Cross-detector R²")
     ax.legend(loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, handlelength=0.9)
     letter(fig, 106, 2, "b")
     ax = axes_mm(fig, 152, 12, 26, 48)

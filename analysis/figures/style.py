@@ -20,7 +20,7 @@ for d in ["/usr/share/fonts/truetype/arial", "/System/Library/Fonts/Supplemental
 
 INK = "#222222"
 plt.rcParams.update({
-    "font.family": "sans-serif", "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
+    "font.family": ["Arial", "DejaVu Sans"], "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
     "mathtext.fontset": "custom", "mathtext.rm": "Arial", "mathtext.it": "Arial:italic", "mathtext.bf": "Arial:bold",
     "mathtext.sf": "Arial", "mathtext.cal": "Arial", "mathtext.default": "regular",
     "font.size": 7, "axes.titlesize": 7, "axes.labelsize": 7, "xtick.labelsize": 6, "ytick.labelsize": 6,
