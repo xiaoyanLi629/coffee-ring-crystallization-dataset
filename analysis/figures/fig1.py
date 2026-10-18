@@ -15,16 +15,17 @@ segmentation of analysis/g_derive.py for the optical image. The masks are used t
            standard deviations subtracted; scaled to the 99.5th percentile in the droplet (not below EDS_FLOOR, so
            that a map without signal stays dark); a gamma curve brings the mean of maps with signal to EDS_MEAN
 """
+import os
 import sys
 import numpy as np, pandas as pd, cv2
 from scipy import ndimage as ndi
 from skimage.exposure import equalize_adapthist
 from skimage.filters import threshold_otsu
 from matplotlib.colors import to_rgb
-sys.path.insert(0, "/root/autodl-fs/CoffeeRing_Crystallization_Dataset/analysis/figures")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from style import figure, axes_mm, save, ELEMENT_ON_BLACK
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/manuscript/figures/fig1_overview"
 
 # ---- parameters

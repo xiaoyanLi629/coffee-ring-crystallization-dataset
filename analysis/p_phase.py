@@ -17,7 +17,7 @@ from multiprocessing import Pool
 from scipy import ndimage as ndi
 from scipy.optimize import nnls
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_p"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]
 H, W = 379, 505

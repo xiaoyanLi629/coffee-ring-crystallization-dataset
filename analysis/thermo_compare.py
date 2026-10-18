@@ -8,11 +8,12 @@ Agreement is reported as Spearman correlation over the 125 recipes and, to remov
 median Spearman correlation within each Table (25 recipes imaged in one or two sessions).
 Outputs analysis/out_t/{compare.csv, compare_summary.json}
 """
+import os
 import json, itertools
 import numpy as np, pandas as pd
 from scipy import stats
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_t"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]
 PAIRS = list(itertools.combinations(range(7), 2))

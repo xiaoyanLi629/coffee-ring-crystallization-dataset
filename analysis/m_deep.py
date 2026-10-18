@@ -13,7 +13,7 @@ Usage: python m_deep.py [cache|train INPUT PROTOCOL|summary]
 import os, sys, json, time
 import numpy as np, pandas as pd, cv2
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_m"
 CACHE = ROOT + "/derived/deep_cache.npz"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]

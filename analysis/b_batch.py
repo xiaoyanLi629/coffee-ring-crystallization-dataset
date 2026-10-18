@@ -14,7 +14,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_b"
 os.makedirs(OUT, exist_ok=True)
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]

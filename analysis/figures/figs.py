@@ -5,16 +5,17 @@ python figs.py [fig2 fig3 ...]     (no argument: all)  ->  manuscript/figures/fi
 Every panel is placed in millimetres (style.axes_mm), so widths, margins and panel letters are identical across figures.
 Panels carry no headline titles; what a panel shows is stated by its axis labels and the caption.
 """
+import os
 import sys, json, itertools
 import numpy as np, pandas as pd, cv2
 from scipy import stats
-sys.path.insert(0, "/root/autodl-fs/CoffeeRing_Crystallization_Dataset/analysis/figures")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from style import (plt, figure, axes_mm, letter, save, ELEMENT, SALT, SALT_TEX, DETECTOR, TABLE, GREY, LIGHT, INK)
 import matplotlib as mpl
 from matplotlib.patches import Rectangle
 from matplotlib.colors import TwoSlopeNorm, LinearSegmentedColormap
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))  # repository root; override with CRD_ROOT
 A = ROOT + "/analysis"
 FIG = ROOT + "/manuscript/figures"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]

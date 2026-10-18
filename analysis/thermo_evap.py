@@ -14,7 +14,7 @@ import os, sys
 import numpy as np, pandas as pd
 from multiprocessing import Pool
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_t"
 DB = "/root/autodl-tmp/phreeqc_db/pitzer.dat"
 LIB = "/root/autodl-tmp/coffee-env/lib/python3.10/site-packages/phreeqpy/iphreeqc/phreeqc3/libiphreeqc-3.7.3.so"

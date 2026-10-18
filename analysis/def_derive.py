@@ -15,7 +15,7 @@ from scipy import ndimage as ndi
 from skimage.filters import threshold_otsu
 from skimage.morphology import convex_hull_image
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_def"
 os.makedirs(OUT, exist_ok=True); os.makedirs(ROOT + "/derived", exist_ok=True)
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]

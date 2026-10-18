@@ -2,6 +2,7 @@
 Mg/Al substrate leakage, optical modality.  Inputs analysis/out_g/derived.csv, analysis/out_def/{features.csv,radial.npz}.
 Outputs analysis/out_g/{summary.json, fig_sem_vs_eds.png, fig_mode_bridge.png, fig_mg_al.png, fig_optical.png}
 """
+import os
 import json
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
@@ -11,7 +12,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_g"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]
 Z = {"C": 6, "O": 8, "Na": 11, "Mg": 12, "S": 16, "Cl": 17, "Ca": 20}

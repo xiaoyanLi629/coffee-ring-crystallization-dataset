@@ -2,10 +2,11 @@
 SEM: grey image z-scored per image, replicated to 3 channels, 512x384.  Optical: RGB, ImageNet normalisation, 512x384.
 Output derived/emb_resnet18.npz (paths, sem, opt)
 """
+import os
 import numpy as np, pandas as pd, cv2, torch, torchvision
 from concurrent.futures import ThreadPoolExecutor
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 dev = "cuda:1" if torch.cuda.device_count() > 1 else ("cuda" if torch.cuda.is_available() else "cpu")
 net = torchvision.models.resnet18(weights=torchvision.models.ResNet18_Weights.IMAGENET1K_V1)
 net.fc = torch.nn.Identity()

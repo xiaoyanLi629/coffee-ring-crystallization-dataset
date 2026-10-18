@@ -9,7 +9,7 @@ import os, re, glob, json
 import numpy as np, pandas as pd
 from PIL import Image
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 RAW = ROOT + "/experiment/data"
 SPLIT = "/root/autodl-fs/coffee-ring-water-chemistry/data/splits/cv5_seed2026.json"
 EL = ["C", "Ca", "Cl", "Mg", "Na", "O", "S"]

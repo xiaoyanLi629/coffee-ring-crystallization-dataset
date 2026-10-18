@@ -18,7 +18,7 @@ system allows it and copied otherwise; nothing in experiment/ is modified.
 import hashlib, json, os, shutil, zipfile
 import numpy as np, pandas as pd
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 SRC = ROOT + "/experiment/data"
 REL = ROOT + "/release"
 ZEN = ROOT + "/release_zenodo"

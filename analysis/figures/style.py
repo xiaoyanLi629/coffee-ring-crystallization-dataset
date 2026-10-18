@@ -5,6 +5,7 @@ bold 8 pt panel letters. Axes are placed in millimetres from the top-left corner
 figures and panel letters sit at the same offset everywhere. Figures are saved as vector PDF with TrueType fonts and as
 a 300 dpi PNG preview.
 """
+import os
 from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
@@ -66,6 +67,7 @@ def letter(fig, x, y, s):
 
 
 def save(fig, path_no_ext):
+    os.makedirs(os.path.dirname(path_no_ext), exist_ok=True)
     fig.savefig(path_no_ext + ".pdf")
     fig.savefig(path_no_ext + ".png", dpi=300)
     plt.close(fig)

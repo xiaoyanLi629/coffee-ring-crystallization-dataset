@@ -7,11 +7,12 @@
 Only grains with purity >= 0.4 are counted in the sensitivity check (reported alongside).
 Outputs analysis/out_p/summary.json
 """
+import os
 import json
 import numpy as np, pandas as pd
 from scipy import stats
 
-ROOT = "/root/autodl-fs/CoffeeRing_Crystallization_Dataset"
+ROOT = os.environ.get("CRD_ROOT", os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # repository root; override with CRD_ROOT
 OUT = ROOT + "/analysis/out_p"
 NAMES = ["halite", "gypsum", "Mg sulfate", "Ca carbonate", "Na/Mg carbonate", "chloride brine"]
 SALT = ["NaHCO3_mM", "CaCl2_mM", "MgSO4_mM"]

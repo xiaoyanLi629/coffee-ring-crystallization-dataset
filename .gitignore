@@ -28,3 +28,9 @@ release/
 release_zenodo/
 manuscript/*.fdb_latexmk
 manuscript/*.fls
+
+# kept on the server only, not published
+manuscript/
+docs/*.html
+docs/assets/
+NOTES.zh.md
