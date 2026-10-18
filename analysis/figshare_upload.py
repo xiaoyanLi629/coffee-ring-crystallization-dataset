@@ -20,7 +20,7 @@ META = {
     "categories": [25231, 25099, 25816, 28879],  # colloid and surface chem.; analytical chem.; mineralogy and crystallography; computer vision
     "keywords": ["coffee-ring effect", "evaporative crystallisation", "scanning electron microscopy",
                  "energy-dispersive X-ray spectroscopy", "water quality", "multi-modal dataset", "distribution shift"],
-    "authors": [{"name": "Xiaoyan Li"}, {"name": "Cuicui Jiang"}, {"name": "Rebecca Lahr"}],
+    "authors": [{"name": "Xiaoyan Li"}, {"name": "Cuicui Jiang"}, {"name": "Rumei Yang"}, {"name": "Rebecca Lahr"}],
     "description": (
         "When a drop of tap water dries, its dissolved salts crystallise into a residue whose ring, film and crystals depend on the "
         "water's composition. This record contains 625 such residues: five replicate 2 µL droplets of each of 125 synthetic waters, "

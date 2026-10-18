@@ -1,11 +1,12 @@
 # SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions
 
-**Xiaoyan Li**¹˒² · **Cuicui Jiang**³ · **Rebecca Lahr**⁴ (corresponding author, rlahr@a2gov.org)
+**Xiaoyan Li**¹˒² · **Cuicui Jiang**³ · **Rumei Yang**⁴ · **Rebecca Lahr**⁵ (corresponding author, rlahr@a2gov.org)
 
 ¹ Department of Automation, Tsinghua University, Beijing, China
 ² Department of Computational Mathematics, Science and Engineering, Michigan State University, East Lansing, MI, USA
 ³ College of Computer Science, Inner Mongolia University, Hohhot, China
-⁴ Department of Civil and Environmental Engineering, Michigan State University, East Lansing, MI, USA
+⁴ School of Nursing, Nanjing Medical University, Nanjing, Jiangsu, China
+⁵ Department of Civil and Environmental Engineering, Michigan State University, East Lansing, MI, USA
 
 | | |
 |---|---|
@@ -199,11 +200,11 @@ Report the detector-only baseline alongside any NaHCO₃ result. The code that r
 
 If you use these data, please cite the dataset and the accompanying Data Descriptor:
 
-> Li, X., Jiang, C. & Lahr, R. SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions. *figshare* https://doi.org/10.6084/m9.figshare.34516434 (2026).
+> Li, X., Jiang, C., Yang, R. & Lahr, R. SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions. *figshare* https://doi.org/10.6084/m9.figshare.34516434 (2026).
 
 ```bibtex
 @misc{li2026crystal,
-  author    = {Li, Xiaoyan and Jiang, Cuicui and Lahr, Rebecca},
+  author    = {Li, Xiaoyan and Jiang, Cuicui and Yang, Rumei and Lahr, Rebecca},
   title     = {{SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions}},
   publisher = {figshare},
   year      = {2026},

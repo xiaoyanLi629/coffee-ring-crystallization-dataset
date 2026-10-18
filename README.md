@@ -1,6 +1,6 @@
 # Coffee-ring salt residues from 125 synthetic tap waters: analysis code
 
-This repository holds the code behind the data descriptor *SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions* by Xiaoyan Li, Cuicui Jiang and Rebecca Lahr. The scripts build the metadata table, quality flags, droplet masks, stretch-invariant EDS descriptors, the crystal-grain inventory, the thermodynamic evaporation model, the reference benchmarks and the figures that describe the dataset.
+This repository holds the code behind the data descriptor *SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions* by Xiaoyan Li, Cuicui Jiang, Rumei Yang and Rebecca Lahr. The scripts build the metadata table, quality flags, droplet masks, stretch-invariant EDS descriptors, the crystal-grain inventory, the thermodynamic evaporation model, the reference benchmarks and the figures that describe the dataset.
 
 The data themselves are not stored here. They are deposited in figshare under a CC BY 4.0 licence:
 
@@ -42,7 +42,7 @@ The analysis was run with Python 3.10 and NumPy 2.0, pandas 2.3, SciPy 1.15, sci
 
 If you use the data, please cite the dataset:
 
-> Li, X., Jiang, C. & Lahr, R. SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions. figshare (2026). https://doi.org/10.6084/m9.figshare.34516434
+> Li, X., Jiang, C., Yang, R. & Lahr, R. SEM, EDS and optical images of coffee-ring salt residues from 125 synthetic tap-water compositions. figshare (2026). https://doi.org/10.6084/m9.figshare.34516434
 
 The companion dataset, which established the drying condition used here by comparing nine temperature and humidity settings, is Li, X., Jiang, C., Chen, J. & Lahr, R. *A physically grounded multi-modal imaging dataset of evaporative coffee ring deposits*. figshare (2026). https://doi.org/10.6084/m9.figshare.34516902
 
