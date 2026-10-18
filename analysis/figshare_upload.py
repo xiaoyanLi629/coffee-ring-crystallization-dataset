@@ -1,6 +1,6 @@
 """Deposit the 625-droplet release in figshare: create a private item (once), reserve its DOI, and upload every file
-with figshare's chunked upload, re-sending only the parts that are not yet complete. Safe to rerun at any time; it never
-publishes the item. Run on a host that can reach api.figshare.com (the AutoDL server is blocked).
+with figshare's chunked upload, re-sending only the parts that are not yet complete. Safe to rerun at any time; files whose content changed
+are replaced, which prepares the next version of a published item. It never publishes the item. Run on a host that can reach api.figshare.com (the AutoDL server is blocked).
 
 Usage: python3 figshare_upload.py DIR      (DIR holds the release files; state in DIR/article.json, log DIR/upload.log)
 """
@@ -99,6 +99,15 @@ if "doi" not in st:
 names = ["README.md", "MD5SUMS", "MD5SUMS_archives", "tables.zip"] + sorted(
     x for x in os.listdir(DIR) if x.startswith("raw_") and x.endswith(".zip"))
 assert set(names) == {x for x in os.listdir(DIR) if x not in SKIP}, "unexpected files in DIR"
+# ---- new version of a published item: drop remote files that are no longer in DIR or whose content changed
+local = {n: md5(f"{DIR}/{n}") for n in names}
+for f in retry(call, "GET", f"/account/articles/{AID}/files?page_size=100"):
+    if local.get(f["name"]) != (f.get("computed_md5") or f.get("supplied_md5")):  # unfinished uploads of current files resume
+        retry(call, "DELETE", f"/account/articles/{AID}/files/{f[id]}")
+        log("removed outdated", f["name"])
+if os.path.exists(DIR + "/ALL_UPLOADED"):
+    os.remove(DIR + "/ALL_UPLOADED")
+
 t0 = time.time()
 while time.time() - t0 < 72 * 3600:
     try:

@@ -33,8 +33,6 @@ RECIPES = ["T1_S5", "T1_S21", "T2_S13", "T3_S25", "T4_S13", "T4_S23", "T5_S5", "
 ROWS = [("Optical", "optical"), ("SEM", "sem"), ("EDS Ca", "Ca"), ("EDS S", "S"), ("EDS Cl", "Cl"), ("EDS Mg", "Mg")]
 CROP = 1.22                     # tile side / droplet diameter
 PX = 600                        # tiles are resampled to PX x PX
-OPT_ROT = 1                     # np.rot90 turns of the optical photograph: it is stored rotated 90 deg clockwise relative to
-                                # SEM/EDS (best optical-SEM match in release/derived/optical.csv: 81-93 deg, not mirrored)
 OPT_MID, OPT_SUBSTRATE, OPT_CHROMA = 0.30, 0.04, 0.35
 SEM_SUBSTRATE = 0.55
 EDS_MEDIAN, EDS_SIGMA, EDS_K = 3, 1.5, 3.0
@@ -141,8 +139,8 @@ def tiles(did):
     sem = square(sem, (g.scale * cx * kx + g.tx_px) * sx, (g.scale * cy * ky + g.ty_px) * sx, CROP * dia * kx * g.scale * sx,
                  fill=None)
     out["sem"] = tone_sem(sem, m_tile)
-    # optical: turned 90 deg anticlockwise into the SEM/EDS orientation (OPT_ROT); own segmentation on a 648 px wide copy
-    o = np.rot90(cv2.imread(f"{d}/image.jpg")[:, :, ::-1], OPT_ROT).astype(np.float32) / 255
+    # optical: own segmentation on a 648 px wide copy
+    o = cv2.imread(f"{d}/image.jpg")[:, :, ::-1].astype(np.float32) / 255
     k = 648 / o.shape[1]
     om = optical_mask(cv2.resize(o.max(2), (648, int(round(o.shape[0] * k))), interpolation=cv2.INTER_AREA))
     ocx, ocy, odia = geom(om)

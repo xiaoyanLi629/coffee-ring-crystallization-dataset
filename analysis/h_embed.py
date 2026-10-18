@@ -19,7 +19,8 @@ def load(path):
     s = cv2.resize(cv2.imread(d + "/sem.jpg", cv2.IMREAD_GRAYSCALE).astype(np.float32), (512, 384), interpolation=cv2.INTER_AREA)
     s = (s - s.mean()) / (s.std() + 1e-6)
     s = np.repeat(s[None], 3, 0)
-    o = cv2.resize(cv2.imread(d + "/image.jpg")[:, :, ::-1].astype(np.float32) / 255, (512, 384), interpolation=cv2.INTER_AREA)
+    o = np.ascontiguousarray(np.rot90(cv2.imread(d + "/image.jpg"), -1))  # photographs are distributed in the SEM/EDS orientation; turn back to the acquisition orientation used for the published results
+    o = cv2.resize(o[:, :, ::-1].astype(np.float32) / 255, (512, 384), interpolation=cv2.INTER_AREA)
     o = ((o - MEAN) / STD).transpose(2, 0, 1)
     return s, o
 

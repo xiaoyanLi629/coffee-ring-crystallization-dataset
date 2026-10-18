@@ -31,7 +31,8 @@ def droplets():
 def load_one(path):
     d = f"{ROOT}/experiment/data/{path}"
     sem = cv2.resize(cv2.imread(d + "/sem.jpg", 0), (W, H), interpolation=cv2.INTER_AREA)
-    opt = cv2.resize(cv2.imread(d + "/image.jpg")[:, :, ::-1], (W, H), interpolation=cv2.INTER_AREA)
+    opt = np.ascontiguousarray(np.rot90(cv2.imread(d + "/image.jpg"), -1)[:, :, ::-1])  # photographs are distributed in the SEM/EDS orientation; turn back to the acquisition orientation used for the published results
+    opt = cv2.resize(opt, (W, H), interpolation=cv2.INTER_AREA)
     eds = []
     for e in EL:
         a = cv2.imread(f"{d}/{e}.jpeg").astype(np.float32).sum(2) / 765

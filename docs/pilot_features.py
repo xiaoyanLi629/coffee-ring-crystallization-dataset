@@ -106,7 +106,7 @@ def one(rep):
     row["sem_in_mean"], row["sem_in_std"] = float(sm[mm].mean()), float(sm[mm].std())
     row["sem_contrast"] = row["sem_in_mean"] - row["semstyle_out_mean"]
     # optical
-    im = cv2.imread(os.path.join(d, "image.jpg"), cv2.IMREAD_COLOR)
+    im = np.ascontiguousarray(np.rot90(cv2.imread(os.path.join(d, "image.jpg"), cv2.IMREAD_COLOR), -1))  # back to the acquisition orientation
     row["opt_shape"] = f"{im.shape[1]}x{im.shape[0]}"
     io = cv2.resize(im, (648, 486), interpolation=cv2.INTER_AREA).astype(np.float32)
     g = io.mean(2)

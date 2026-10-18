@@ -6,6 +6,8 @@ G2 SEM grey level vs EDS composition (pixel level, inside the droplet, after the
    correlations against a shifted control.
 G5 optical image: droplet segmentation, geometry, and registration to the SEM image (scale from droplet size, rotation
    and mirror searched on gradient-magnitude images); control = the same search against another replicate of the recipe.
+   Photographs are analysed in their acquisition orientation (90 deg clockwise of SEM/EDS); widths, heights and rotation
+   angles refer to that orientation here and are converted to the distributed orientation by build_release.py.
 Outputs analysis/out_g/{derived.csv, fig_optical_qc.png}
 """
 import os, json, datetime
@@ -110,7 +112,7 @@ def best_rot(a, b):
 
 
 def load_opt(path):
-    o = cv2.imread(f"{ROOT}/experiment/data/{path}/image.jpg")
+    o = np.ascontiguousarray(np.rot90(cv2.imread(f"{ROOT}/experiment/data/{path}/image.jpg"), -1))  # photographs are distributed in the SEM/EDS orientation; turn back to the acquisition orientation used for the published results
     h0, w0 = o.shape[:2]
     g = cv2.resize(o.max(2).astype(np.float32), (OW, int(round(OW * h0 / w0))), interpolation=cv2.INTER_AREA)
     return g, (w0, h0), o

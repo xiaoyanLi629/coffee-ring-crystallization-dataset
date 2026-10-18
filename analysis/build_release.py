@@ -2,7 +2,9 @@
 
 release/
   README.md                      description of the record (copied from analysis/release_README.md)
-  raw/Table_t/Sample_s/r_rep/    sem.jpg, sem.txt, {C,Ca,Cl,Mg,Na,O,S}.jpeg, image.jpg as written by the instruments
+  raw/Table_t/Sample_s/r_rep/    sem.jpg, sem.txt, {C,Ca,Cl,Mg,Na,O,S}.jpeg, image.jpg as written by the instruments, except
+                                 that image.jpg was turned 90 deg anticlockwise into the SEM/EDS orientation by a lossless JPEG
+                                 transform (jpegtran -rotate 270 -perfect)
   metadata/                      samples.csv, quality_flags.csv, recipes.csv
   derived/                       masks_eds.npz, eds_features.csv, registration.csv, optical.csv, grains.csv,
                                  phase_droplet.csv, phase_maps.npz, thermodynamics.csv
@@ -47,6 +49,7 @@ def md5(p):
 
 m = pd.read_csv(ROOT + "/metadata/samples.csv")
 ID = dict(zip(m.path, m.droplet_id))
+m_cols = set(m.columns) | {"sem_px_rel"}  # sem_px_rel: former name of sem_px_um, still present in intermediate outputs
 os.makedirs(REL + "/metadata", exist_ok=True); os.makedirs(REL + "/derived", exist_ok=True)
 
 # ---- raw files
@@ -69,7 +72,7 @@ np.savez_compressed(REL + "/derived/masks_eds.npz", droplet_id=np.array([ID[p] f
 
 f = pd.read_csv(ROOT + "/analysis/out_def/features.csv")
 keep = ["mask_method", "mask_frac"] + [c for c in f.columns if c.split("_")[0] in EL and c.split("_", 1)[1] in
-                                       ("d", "cov", "contrast", "rbar", "gini", "rim_index")] + [c for c in f.columns if c.startswith("sem_") and c not in m.columns]
+                                       ("d", "cov", "contrast", "rbar", "gini", "rim_index")] + [c for c in f.columns if c.startswith("sem_") and c not in m_cols]
 f[["droplet_id"] + keep].to_csv(REL + "/derived/eds_features.csv", index=False)
 
 reg = json.load(open(REG))
@@ -81,13 +84,18 @@ rg.sort_values("droplet_id").to_csv(REL + "/derived/registration.csv", index=Fal
 g = pd.read_csv(ROOT + "/analysis/out_g/derived.csv")
 ocols = ["date_optical", "opt_w", "opt_h", "opt_mean_rgb", "opt_mask_method", "opt_frac", "opt_diam_px", "opt_in_d", "opt_rim_d",
          "opt_centre_d", "opt_bright_frac", "opt_hf", "optreg_ncc", "optreg_angle", "optreg_flip", "optreg_ncc_ctrl"]
+# out_g describes the photographs in their acquisition orientation; express sizes and the optical-to-SEM rotation for the
+# distributed files, which are turned 90 deg anticlockwise (cv2 angle convention, applied after the optional mirror)
+g["opt_w"], g["opt_h"] = g.opt_h.copy(), g.opt_w.copy()
+ok = g.optreg_angle.notna()
+g.loc[ok, "optreg_angle"] = np.where(g.loc[ok, "optreg_flip"].astype(bool), g.loc[ok, "optreg_angle"] + 90, g.loc[ok, "optreg_angle"] - 90) % 360
 g[["droplet_id"] + ocols].to_csv(REL + "/derived/optical.csv", index=False)
 
 gr = pd.read_csv(ROOT + "/analysis/out_p/grains.csv")
 gr.insert(0, "droplet_id", gr.path.map(ID)); gr = gr.drop(columns="path").rename(columns={"r": "r_norm"})
 gr.to_csv(REL + "/derived/grains.csv", index=False)
 pd_ = pd.read_csv(ROOT + "/analysis/out_p/phase_droplet.csv")
-pcols = [c for c in pd_.columns if c not in m.columns]
+pcols = [c for c in pd_.columns if c not in m_cols]
 pd_[["droplet_id"] + pcols].to_csv(REL + "/derived/phase_droplet.csv", index=False)
 pm = np.load(ROOT + "/analysis/out_p/phase_maps.npz")
 np.savez_compressed(REL + "/derived/phase_maps.npz", droplet_id=np.array([ID[p] for p in pm["paths"]]), labels=pm["labels"],

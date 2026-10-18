@@ -40,7 +40,7 @@ Each residue was observed in three ways:
 
 | Modality | Files per droplet | Format |
 |---|---|---|
-| Optical microscopy | `image.jpg` | RGB, 2592 × 1944 px (586 droplets) or 1280 × 1024 px (39 droplets) |
+| Optical microscopy | `image.jpg` | RGB, 1944 × 2592 px (586 droplets) or 1024 × 1280 px (39 droplets), in the same orientation as SEM and EDS |
 | Scanning electron microscopy (SEM) | `sem.jpg` and the instrument record `sem.txt` | 8-bit greyscale, 2560 × 1920 px |
 | Energy-dispersive X-ray spectroscopy (EDS) | `C.jpeg`, `Ca.jpeg`, `Cl.jpeg`, `Mg.jpeg`, `Na.jpeg`, `O.jpeg`, `S.jpeg` | Pseudo-colour maps, mostly 1010 × 757/758 px |
 
@@ -77,7 +77,7 @@ Across the design, hardness ranges from 100 to 425 mg/L as CaCO₃ and total dis
 |---|---|
 | Substrate | 6061 aluminium, mirror-like (#8) finish, 1 × 3 inch slides, ten droplets per slide |
 | Deposition | 2 µL droplets from a programmable four-axis autosampler; drying took about 20 min in a chamber at 23–26 °C and 45–50 % RH |
-| Optical | Celestron Digital Microscope Pro (5 MP) at 100×; photographs taken July–August 2021; about 1.41 µm per pixel at 2592 × 1944 px and 2.69 µm at 1280 × 1024 px, from the droplet diameter relative to SEM |
+| Optical | Celestron Digital Microscope Pro (5 MP) at 100×; photographs taken July–August 2021 and turned by 90° into the SEM/EDS orientation with a lossless JPEG transform; about 1.41 µm per pixel at 1944 × 2592 px and 2.69 µm at 1024 × 1280 px, from the droplet diameter relative to SEM |
 | SEM | JEOL JSM-6610LV, high vacuum, 15 kV (10 kV for two droplets), 10 mm working distance, 40–55× magnification; nominal pixel size 50 / magnification µm (1.00 µm at 50×), column `sem_px_um`; twelve sessions, 14–28 August 2021 |
 | EDS | Oxford Instruments system on the same microscope; seven elemental maps per droplet, exported as contrast-stretched JPEG |
 
@@ -165,7 +165,7 @@ Every droplet has the identifier **`T{t}_S{s}_R{r}`** (for example `T2_S13_R1`).
 | `derived/masks_eds.npz` | 625 | Arrays `droplet_id`, `masks` (625 × 379 × 505, boolean) and `grid` |
 | `derived/eds_features.csv` | 625 | For each element, `{E}_d`, `_cov`, `_contrast`, `_rbar`, `_gini` and `_rim_index`, all expressed relative to the substrate of the same map; SEM descriptors prefixed `sem_` |
 | `derived/registration.csv` | 625 | `scale`, `tx_px` and `ty_px` with x_SEM = s · x_EDS + t on the 758 × 1010 EDS grid; matching scores before and after registration; fallback indicator |
-| `derived/optical.csv` | 625 | Photograph date, image size, droplet mask and diameter, ring and centre descriptors, and optical-to-SEM registration (`optreg_*`) |
+| `derived/optical.csv` | 625 | Photograph date, image size, droplet mask and diameter, ring and centre descriptors, and optical-to-SEM registration (`optreg_*`: rotation in degrees anticlockwise, applied after the mirror when `optreg_flip` is true) |
 | `derived/grains.csv` | 84,245 | One row per grain: size, normalised radius `r_norm`, assigned phase, purity, fit quality and per-element enrichment `z_{E}` |
 | `derived/phase_droplet.csv` | 619 | Number, area fraction, mean radius and mean size of grains per phase |
 | `derived/phase_maps.npz` | 619 | Label maps `labels` (619 × 379 × 505), phase `names` (halite, gypsum, Mg sulfate, Ca carbonate, Na/Mg carbonate, chloride brine) and `element_scale` |

@@ -89,7 +89,7 @@ flag(["T4_S20_R3", "T4_S20_R4"], "sem_duplicated", "sem.jpg and sem.txt byte-ide
 flag(["T2_S18_R2", "T2_S18_R3", "T2_S18_R4", "T2_S18_R5", "T2_S19_R5", "T2_S22_R5", "T2_S23_R1", "T3_S1_R1"],
      "semtxt_wrong_in_released_copy", "data/ (enhanced) sem.txt overwritten by a copy of T2_S18_R1; raw copy is correct and used here")
 flag(df.loc[~df.eds_size_consistent, "droplet_id"], "eds_mixed_sizes", "EDS maps of this droplet differ in pixel size")
-flag(df.loc[df.optical_w != 2592, "droplet_id"], "optical_low_resolution", "optical image 1280x1024 instead of 2592x1944")
+flag(df.loc[df.optical_h != 2592, "droplet_id"], "optical_low_resolution", "optical image 1024x1280 instead of 1944x2592")
 flag(df.loc[df.sem_kv != 15, "droplet_id"], "sem_10kV", "SEM at 10 kV instead of 15 kV")
 pil = pd.read_csv(ROOT + "/pilot/features.csv")
 pil["droplet_id"] = [f"T{a}_S{b}_R{c}" for a, b, c in zip(pil.table, pil["sample"], pil.replicate)]
