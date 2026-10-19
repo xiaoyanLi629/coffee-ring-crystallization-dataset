@@ -6,7 +6,7 @@
 ² Department of Computational Mathematics, Science and Engineering, Michigan State University, East Lansing, MI, USA
 ³ College of Computer Science, Inner Mongolia University, Hohhot, China
 ⁴ School of Nursing, Nanjing Medical University, Nanjing, Jiangsu, China
-⁵ Department of Civil and Environmental Engineering, Michigan State University, East Lansing, MI, USA
+⁵ Ann Arbor City, Ann Arbor, MI, USA
 
 | | |
 |---|---|
