@@ -103,7 +103,7 @@ assert set(names) == {x for x in os.listdir(DIR) if x not in SKIP}, "unexpected 
 local = {n: md5(f"{DIR}/{n}") for n in names}
 for f in retry(call, "GET", f"/account/articles/{AID}/files?page_size=100"):
     if local.get(f["name"]) != (f.get("computed_md5") or f.get("supplied_md5")):  # unfinished uploads of current files resume
-        retry(call, "DELETE", f"/account/articles/{AID}/files/{f[id]}")
+        retry(call, "DELETE", f"/account/articles/{AID}/files/{f['id']}")
         log("removed outdated", f["name"])
 if os.path.exists(DIR + "/ALL_UPLOADED"):
     os.remove(DIR + "/ALL_UPLOADED")
@@ -126,7 +126,7 @@ while time.time() - t0 < 72 * 3600:
                 loc = retry(call, "POST", f"/account/articles/{AID}/files", {"name": n, "size": os.path.getsize(p), "md5": md5(p)})["location"]
                 fid = int(loc.rstrip("/").split("/")[-1])
             info = retry(call, "GET", f"/account/articles/{AID}/files/{fid}")
-            if info.get("status") == "available":
+            if info.get("status") != "created":  # available, or still in figshare's integrity check
                 continue
             up = info["upload_url"]
             parts = retry(call, "GET", up)["parts"]
